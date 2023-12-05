@@ -1,1 +1,706 @@
-Hello World.
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Stellar, T2I">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stellar</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Stellar: Systematic Evaluation of<br>Human-Centric Personalized<br>Text-to-Image Methods</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keunhong.com">Panos Achlioptas</a>,</span>
+            <span class="author-block">
+              <a href="https://utkarshsinha.com">Alexandros Benetatos</a>,</span>
+            <span class="author-block">
+              <a href="https://jonbarron.info">Iordanis Fostiropoulos</a>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Dimitris Skourtis</a>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://steelperlot.com/">Steel Perlot Inc.</a></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="todo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="todo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="todo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="todo"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span>
+              <!-- Benchmark Link. -->
+              <span class="link-block">
+                <a href="./benchmarks.html"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Benchmark</span>
+                </a>
+              </span>
+              <!-- Supplementary Link. -->
+              <span class="link-block">
+                <a href="todo"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Supplementary</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+        <img
+          src="static/images/stellar_seed_ablation_rotated_f5f5f5.jpg"
+          style="padding-bottom: 10px"
+          class="img-responsive"
+          alt="overview"
+        />
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this work, we systematically study the problem of
+            <b>personalized text-to-image</b> generation, where the output image
+            is expected to portray information about specific human subjects.
+            E.g., generating images of oneself appearing at imaginative places,
+            interacting with various items, or engaging in fictional activities.
+            To this end, we focus on text-to-image systems that input a single
+            image of an individual to ground the generation process along with
+            text describing the desired visual context. Our first contribution
+            is to fill the literature gap by curating high-quality, appropriate
+            data for this task. Namely, we introduce a
+            <i>standardized</i> dataset (Stellar) that contains personalized
+            prompts coupled with images of individuals that is an order of
+            magnitude larger than existing relevant datasets and where rich
+            semantic ground-truth annotations are readily available. Having
+            established Stellar to promote cross-systems fine-grained
+            comparisons further, we introduce a rigorous ensemble of specialized
+            <i>metrics</i> that highlight and disentangle fundamental properties
+            such systems should obey. Besides being intuitive, our new metrics
+            correlate more strongly with human judgment than currently used
+            (generic) text-to-image metrics on this task. Last but not least,
+            drawing inspiration from the recent works of
+            <a href="https://arxiv.org/abs/2302.13848">Elite</a> and
+            <a href="https://stability.ai/stable-diffusion">SDXL</a>, we derive
+            a highly efficient text2image model (<i>StellarNet</i>) that does
+            not require test-time finetuning for each subject and, more
+            importantly, sets quantitatively and in human trials a new SoTA
+            surpassing established works by a very wide margin.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="todo"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Dataset. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Stellar Dataset</h2>
+
+        <!-- Overview. -->
+        <h3 class="title is-4">Prompts Dataset Overview</h3>
+        <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame. <span class="colored-circle" style="background-color:orange;"></span>
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <table style="width: 100%;" id="stellar-prompts-table">
+            <colgroup>
+                <col style="width: 142pt;">
+                <col style="width: 132pt;">
+                <col style="width: 140pt;">
+                <col style="width: 33pt;">
+            </colgroup>
+            <thead style="background-color: #f0f0f0;">
+              <tr>
+                <th style="text-align: left;"><strong>Stellar-<math>
+                  <mi mathvariant="script">H</mi>
+                  </math></strong></th>
+                <th style="text-align: left;"><strong>Stellar-<math>
+                  <mi mathvariant="script">T</mi>
+                  </math></strong></th>
+                <th style="text-align: left;"><strong>Template</strong></th>
+                <th style="text-align: left;"><strong>Category</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="left_middle">juggling oranges on a rooftop</td>
+                <td class="left_middle">juggling <span class="underlined" style="text-decoration-color:var(--fruit);">apples</span> in the <span class="underlined" style="text-decoration-color:var(--building);">airport</span></td>
+                <td class="left_middle">juggling <span style="background-color:var(--fruit); color:black;">[fruit]</span> <span style="background-color:var(--building); color:black;">[building loc.]</span></td>
+                <td class="left_middle"><span class="colored-circle" style="background-color:var(--fruit);"></span><span class="colored-circle" style="background-color:var(--building);"></span></td>
+              </tr>
+              <tr>
+                <td class="left_middle">riding a skateboard in outer-space</td>
+                <td class="left_middle">riding a  <span class="underlined" style="text-decoration-color:var(--vehicle);">skateboard</span> near <span class="underlined" style="text-decoration-color:var(--space_loc);">Saturn</span></td>
+                <td class="left_middle">riding <span style="background-color:var(--vehicle); color:black;">[vehicle]</span> in the <span style="background-color:var(--space_loc); color:black;">[space loc.]</span></td>
+                <td class="left_middle"><span class="colored-circle" style="background-color:var(--vehicle);"></span><span class="colored-circle" style="background-color:var(--space_loc);"></span></td>
+              </tr>
+              <tr>
+                <td class="left_middle">wrestling an octopus on a pirate boat</td>
+                <td class="left_middle">fighting a <span class="underlined" style="text-decoration-color:var(--animal);">shark</span> on a <span class="underlined" style="text-decoration-color:var(--vehicle);">boat</span></td>
+                <td class="left_middle">fighting <span style="background-color:var(--animal); color:black;">[animal]</span> in the <span style="background-color:var(--vehicle); color:black;">[vehicle]</span></td>
+                <td class="left_middle"><span class="colored-circle" style="background-color:var(--animal);"></span><span class="colored-circle" style="background-color:var(--vehicle);"></span></td>
+              </tr>
+              <tr>
+                <td class="left_middle">as an astronaut walking to a rocket</td>
+                <td class="left_middle">as an <span class="underlined" style="text-decoration-color:var(--uniformed);">astronaut</span> near a <span class="underlined" style="text-decoration-color:var(--space_obj);">spaceship</span></td>
+                <td class="left_middle">as <span style="background-color:var(--uniformed); color:black;">[uniformed]</span> near <span style="background-color:var(--space_obj); color:black;">[space-object]</span></td>
+                <td class="left_middle"><span class="colored-circle" style="background-color:var(--uniformed);"></span><span class="colored-circle" style="background-color:var(--space_obj);"></span></td>
+              </tr>
+              <tr>
+                <td class="left_middle">playing the trombone in a castle</td>
+                <td class="left_middle">playing the <span class="underlined" style="text-decoration-color:var(--musical);">saxophone</span> in a <span class="underlined" style="text-decoration-color:var(--building);">castle</span></td>
+                <td class="left_middle">playing <span style="background-color:var(--musical); color:black;">[musical instrument]</span> <span style="background-color:var(--building); color:black;">[building loc.]</span></td>
+                <td class="left_middle"><span class="colored-circle" style="background-color:var(--musical);"></span><span class="colored-circle" style="background-color:var(--building);"></span></td>
+              </tr>
+              <tr>
+                <td class="left_middle">riding an elephant through the jungles of Thailand</td>
+                <td class="left_middle">riding a <span class="underlined" style="text-decoration-color:var(--animal);">tiger</span> in the <span class="underlined" style="text-decoration-color:var(--nature);">jungle</span></td>
+                <td class="left_middle">riding <span style="background-color:var(--animal); color:black;">[animal]</span> <span style="background-color:var(--nature); color:black;">[nature loc.]</span></td>
+                <td class="left_middle"><span class="colored-circle" style="background-color:var(--animal);"></span><span class="colored-circle" style="background-color:var(--nature);"></span></td>
+              </tr>
+              <tr>
+                <td class="left_middle">eating a croissant at a cafe in Paris</td>
+                <td class="left_middle">eating a <span class="underlined" style="text-decoration-color:var(--food);">souvlaki</span> in <span class="underlined" style="text-decoration-color:var(--city);">Athens</span></td>
+                <td class="left_middle">eating <span style="background-color:var(--food); color:black;">[food]</span> <span style="background-color:var(--city); color:black;">[city]</span></td>
+                <td class="left_middle"><span class="colored-circle" style="background-color:var(--food);"></span><span class="colored-circle" style="background-color:var(--city);"></span></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <h3 class="title is-4">Images Dataset</h3>
+        <div class="content has-text-justified">
+          <p>
+            We use subset of CelebaHQ-Mask blah blah
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Dataset. -->
+
+    <!-- Metrics. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Metrics</h2>
+
+        <!-- Overview. -->
+        <h3 class="title is-4">Introduced Metrics Overview</h3>
+        <div class="content has-text-justified">
+          <p>
+            We introduce three novel metrics aimed at quantifying the similarity between the input
+            subject's `identity', and the generated output image; (i) an overall similarity metric
+            assessing general identity preservation (<tt>IPS</tt>) (ii) a fine-grained metric focused
+            on facial attribute preservation (<tt>APS</tt>), and (iii) a metric orthogonal to the
+            first two, designed to evaluate the sensitivity and robustness of a method in maintaining
+            identity consistency (<tt>SIS</tt>).
+          </p>
+          <p>
+            Established metrics assessing text-image similarity (e.g., CLIP<sub>T</sub>) often fall
+            short in providing granular insights into their scoring rationale. For instance, given a
+            low similarity, it is impossible to reason whether this stems from a failure to depict the
+            semantic objects, the requested interactions, the desired atmosphere or style, or
+            combinations of the above. To overcome this limitation, we introduce specialized and
+            interpretable metrics to evaluate two key aspects of the alignment between image and
+            prompt; object faithfulness (<tt>GOA</tt>) and the fidelity of depicted relationships (<tt>RFS</tt>).
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img
+            src="static/images/metrics_explanation_easy.jpg"
+            style="padding-bottom: 10px"
+            class="img-responsive"
+            alt="overview"
+          />
+        </div>
+        <!-- 
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>
+        <br/> -->
+        <!--/ Overview. -->
+
+        <div class="columns is-centered">
+          <!-- Correlation. -->
+          <div class="column">
+            <div class="content">
+              <h2 class="title is-3">Metrics Correlation</h2>
+              <p>
+                Personalized metrics (bottom - <span class="colored-circle" style="background-color:violet;"></span>)
+                have a small correlation with Img-to-Img (top) and Text-to-Img
+                (middle - <span class="colored-circle" style="background-color:skyblue;"></span>)
+                metrics with a Pearson correlation of ρ=0.06 and ρ=0.25, which suggests that they
+                provide an additional dimension by which T2I systems can be evaluated. This is in
+                contrast to, Text-to-Img metrics (<span class="colored-circle" style="background-color:skyblue;"></span>)
+                that have an increased correlation (e.g., CLIP<sub>T</sub> and HPSv2, with ρ=0.6).
+                Note also how the Text-to-Img metrics have a high correlation with <tt>GOA</tt>
+                but very little correlation with <tt>RFS</tt>, indicating that they mostly assess
+                the representation of the objects in the image and not the interactions. Overall,
+                our metrics appear to capture several orthogonal dimensions, crucial for evaluating
+                the output's quality; that can not be fully assessed with existing metrics.
+              </p>
+              <img
+                src="static/images/metrics_correlation_matrix.jpg"
+                style="padding-bottom: 10px"
+                class="img-responsive"
+                alt="overview"
+              />
+    
+            </div>
+          </div>
+          <!--/ Correlation. -->
+
+          <!-- Human Alignment. -->
+          <div class="column">
+            <h2 class="title is-3">Human Alignment</h2>
+            <div class="columns is-centered">
+              <div class="column content">
+                <p>
+                  Kendall's (τ) correlation among existing and our introduced metrics.
+                  Our metrics correlate significantly better with key aspects of personalized
+                  generations and human-preference.
+                </p>
+                <table>
+                  <thead>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2" style="vertical-align: middle">Metric</th>
+                        <th colspan="3" style="text-align: center">Human Pref. <i>Kendall</i> - τ</th>
+                    </tr>
+                    <tr>
+                        <th>Obj</th>
+                        <th>Rel</th>
+                        <th>Overall</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>CLIP<sub>T</sub></td>
+                      <td>0.130</td>
+                      <td>0.089</td>
+                      <td>0.106</td>
+                    </tr>
+                    <tr>
+                        <td>HPSv2</td>
+                        <td>0.067</td>
+                        <td>0.004</td>
+                        <td>0.224</td>
+                    </tr>
+                    <tr>
+                        <td>PickScore</td>
+                        <td>0.139</td>
+                        <td>0.110</td>
+                        <td>0.246</td>
+                    </tr>
+                    <tr>
+                        <td>DreamSim</td>
+                        <td>0.031</td>
+                        <td>0.132</td>
+                        <td>0.270</td>
+                    </tr>
+                    <tr>
+                        <td>CLIP<sub>I</sub></td>
+                        <td>0.049</td>
+                        <td>0.011</td>
+                        <td>0.304</td>
+                    </tr>
+                    <tr>
+                        <td>HPSv1</td>
+                        <td>0.094</td>
+                        <td>0.103</td>
+                        <td>0.304</td>
+                    </tr>
+                    <tr>
+                        <td>ImageReward</td>
+                        <td>0.040</td>
+                        <td>0.060</td>
+                        <td>0.320</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid #ac7ebc;">
+                        <td>Aesth.</td>
+                        <td>0.049</td>
+                        <td>0.146</td>
+                        <td>0.359</td>
+                    </tr>
+                    <tr>
+                        <td>GOA</td>
+                        <td><b>0.175</b></td>
+                        <td>0.110</td>
+                        <td>0.149</td>
+                    </tr>
+                    <tr>
+                        <td>RFS</td>
+                        <td>0.121</td>
+                        <td><b>0.163</b></td>
+                        <td>0.167</td>
+                    </tr>
+                    <tr>
+                        <td>APS</td>
+                        <td>0.013</td>
+                        <td>0.018</td>
+                        <td>0.389</td>
+                    </tr>
+                    <tr>
+                        <td>SIS</td>
+                        <td>0.112</td>
+                        <td>0.011</td>
+                        <td>0.435</td>
+                    </tr>
+                    <tr>
+                        <td>IPS</td>
+                        <td>0.094</td>
+                        <td>0.018</td>
+                        <td><b>0.455</b></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                  </tfoot>      
+                </table>
+              </div>
+            </div>
+          </div>
+          <!--/ Human Alignment. -->
+      </div>
+
+
+        <!-- Re-rendering. -->
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div> -->
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
+    <!--/ Metrics. -->
+
+
+    <!-- StellarNet. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">StellarNet</h2>
+
+        <!-- Overview. -->
+        <h3 class="title is-4">Architecture Overview</h3>
+        <div class="content has-text-justified">
+          <p>
+            The Dynamic Textual Inversion (<tt>DTI</tt>) module uses a binary subject mask to
+            invert the input identity image into textual embeddings, S<sup>*</sup>, that are
+            used to condition the Stable Diffusion backbone (<b style="color: #ae96b4;">left</b>).
+            This S<sup>*</sup> is used as part of the textual prompt that is passed to the pre-trained
+            text-to-image model (SDXL base) to generate images of the given identity
+            (<b style="color: #d8b14f;">middle</b>). Additionally, we use LoRA weight offsets for the
+            UNet backbone of SDXL to learn to better understand the new S<sup>*</sup> embedding and
+            generate the desired personality (<b style="color: #be544e;">middle bottom</b>). To avoid
+            unnecessary penalization of the model, we use the MSE loss only over the masked outputs,
+            and we additionally regularize the S<sup>*</sup> embeddings to avoid learning high-frequency
+            information (<b style="color: #6c8eb5;">right</b>). During training, we only update the
+            weights of the Image2Text projection and the LoRA weights.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img
+            src="static/images/STELLAR_horizontal.jpg"
+            style="padding-bottom: 10px"
+            class="img-responsive"
+            alt="overview"
+          />
+        </div>
+        <!--/ Overview. -->
+        <!-- Comparisons. -->
+        <h3 class="title is-4">Comparisons</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using the results from our <i>Overall</i> Human Preference Study,
+            we find StellarNet's output generations to be preferred by humans when given images
+            generated by all ablated systems. Notably, StellarNet outperforms other methods by a
+            wide margin -- it is preferred in 78.1% of all trials, compared to 8.7% for the next
+            best method.
+          </p>
+          <p>
+            On the Image, the left-most column depicts the input image portraying the identity of the actor
+            (marked in text as S<sup>*</sup>). The four right-most images are output
+            generations each based on the system delineated on the column's title. All methods
+            input the corresponding textual prompt shown next to each row of images. Additionally,
+            coupled with every image there are 5 colored circles representing the preference of
+            the 5 distinct metrics shown on the bottom of the figure. An opaque circle, e.g.,
+            <span class="colored-circle" style="background-color:#ac7ebc;"></span>, means this
+            image has the highest score for this metric compared to the other images in the row.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img
+            src="static/images/STELLAR_main_fig_full.jpg"
+            style="padding-bottom: 10px"
+            class="img-responsive"
+            alt="overview"
+          />
+        </div>
+        <!--/ Comparisons. -->
+      </div>
+    </div>
+    <!--/ StellarNet. -->
+
+    <!-- License. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">License</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            The Stellar-prompt dataset is released under the
+            <a href="materials/stellar_terms_of_use.txt">Stellar Terms of Use</a>,
+            and our code is released under the
+            <a href="materials/MIT_license.txt">MIT license</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ License. -->
+
+    <!-- Concurrent Work. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+          <p>
+            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
+            both use deformation fields to model non-rigid scenes.
+          </p>
+          <p>
+            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
+          </p>
+          <p>
+            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{stellar2023,
+  author    = {Achlioptas, Panos and Benetatos, Alexandros and Fostiropoulos, Iordanis and Skourtis, Dimitris},
+  title     = {Stellar: Systematic Evaluation of Human-Centric Personalized Text-to-Image Methods},
+  volume    = {abs/2306.15880},
+  journal   = {CORR},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>
+      The authors wish to acknowledge XX and YY TODO. They also want to
+      express their gratitude to the wonderful Turkers of Amazon
+      Mechanical Turk, whose help in curating the introduced dataset was
+      pivotal.
+    </p>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/stellar-gen-ai" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
