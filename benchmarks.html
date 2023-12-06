@@ -141,8 +141,8 @@
 <body>
 <div class="topnav">
     <a>Stellar</a>
-    <a href="TODO">Project Page</a>
-    <a href="https://TODO">Code</a>
+    <a href="./index.html">Project Page</a>
+    <a href="TODO">Code</a>
     <a href="TODO">Paper</a>
 </div>
 
@@ -167,7 +167,7 @@
             <b>TODO UPDATE PER OUR STUFF and mostly explain the metrics</b>
             <br>
 
-            With the ReferIt3D benchmarks, we wish to track and report the ongoing progress in the emerging field of language-assisted understanding and learning in real-world 3D environments. To this end, we investigate the same questions present in the <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460409.pdf">ReferIt3D paper</a> and compare methods that try to identify a <b>single</b> 3D object among many of a <b>real-world scene</b>, given appropriate <b>referential language</b>.
+            <!-- With the ReferIt3D benchmarks, we wish to track and report the ongoing progress in the emerging field of language-assisted understanding and learning in real-world 3D environments. To this end, we investigate the same questions present in the <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460409.pdf">ReferIt3D paper</a> and compare methods that try to identify a <b>single</b> 3D object among many of a <b>real-world scene</b>, given appropriate <b>referential language</b>.
             
             <br><br>
             Specifically we consider:
@@ -180,7 +180,7 @@
                 <li>Last, how such methods perform when the input language is <strong>View-Dependent</strong> e.g., <i>"Facing the couch, pick the ... on your right side"</i>, <i>vs.</i> being <strong>View-Independent</strong> e.g., <i>"It's the ... between the bed and the window"</i>.
                 </li>
             </ul>
-            In a nutshell, these questions regarding the object identification problem in 3D environments aim to <b>disentangle</b> the performance-characteristics of the compared approaches, aside of providing a single "aggregate" performance score, as explained in the  <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460409.pdf"> ReferIt3D paper</a>.            
+            In a nutshell, these questions regarding the object identification problem in 3D environments aim to <b>disentangle</b> the performance-characteristics of the compared approaches, aside of providing a single "aggregate" performance score, as explained in the  <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460409.pdf"> ReferIt3D paper</a>.             -->
         </div>
     </div>
 
@@ -190,7 +190,8 @@
                 <b>Rules</b>
             </h2>
             <hr>
-            Please use our published datasets following the official ScanNet train/val splits. Since in these benchmarks we tackle the identification problem among <strong>all</strong> objects in a scene (and not only among the same-class distractors), when using the Nr3D make sure to use only the utterances where the target-class is explicitly mentioned (mentions_target_class=True) and which where guessed correctly by the human listener (correct_guess=True).
+            TODO
+            <!-- Please use our published datasets following the official ScanNet train/val splits. Since in these benchmarks we tackle the identification problem among <strong>all</strong> objects in a scene (and not only among the same-class distractors), when using the Nr3D make sure to use only the utterances where the target-class is explicitly mentioned (mentions_target_class=True) and which where guessed correctly by the human listener (correct_guess=True).
 
             <br>
             <br>
@@ -211,7 +212,7 @@
         
             <br>
             <br>
-            <b>Note:</b> The official code of Referit3D paper for training/testing takes as input the raw datasets because it applies the filters mentioned above on the fly.
+            <b>Note:</b> The official code of Referit3D paper for training/testing takes as input the raw datasets because it applies the filters mentioned above on the fly. -->
         </div>
     </div>
 
@@ -222,16 +223,14 @@
                 <b>Stellar-H Challenge</b>
             </h2>
             <hr>
-            <img src="img/benchmark_stellar_h_teaser.png" class="img-fluid center-block" style=" width: 80%; height: auto;"/>
+            <!-- <img src="img/benchmark_stellar_h_teaser.png" class="img-fluid center-block" style=" width: 80%; height: auto;"/> -->
             <table id="stellar_h_table" class="table table-bordered" style="width:100%">
                 <thead>
                 <tr>
                     <th>Paper</th>
-                    <th>Overall</th>
-                    <th>Easy</th>
-                    <th>Hard</th>
-                    <th>View-Dependent</th>
-                    <th>View-Independent</th>
+                    <th>IPS</th>
+                    <th>APS</th>
+                    <th>SIS</th>
                 </tr>
                 </thead>
                 
@@ -241,109 +240,13 @@
                     <td>XX%</td>
                     <td>XX%</td>
                     <td>XX%</td>
+                </tr>
+                <tr>
+                    <td class="text-left"><a href="https://arxiv.org/pdf/??.pdf">ELITE</a></td>
                     <td>XX%</td>
                     <td>XX%</td>
-                </tr>
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/pdf/2103.16381.pdf">FFL-3DOG</a></td>
-                    <td>41.7%</td>
-                    <td>48.2%</td>
-                    <td>35.0%</td>
-                    <td>37.1%</td>
-                    <td>44.7%</td>
-                </tr>
-                <tr>
-                    <td class="text-left"><a href="https://www.aaai.org/AAAI21Papers/AAAI-4433.HuangP.pdf">Text-Guided-GNNs</a>
-                    </td>
-                    <td>37.3%</td>
-                    <td>44.2%</td>
-                    <td>30.6%</td>
-                    <td>35.8%</td>
-                    <td>38.0%</td>
-                </tr>
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2103.01128">InstanceRefer</a></td>
-                    <td>38.8%</td>
-                    <td>46.0%</td>
-                    <td>31.8%</td>
-                    <td>34.5%</td>
-                    <td>41.9%</td>
-                </tr>
-                 <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2108.02388">TransRefer3D</a></td>                     
-                    <td>42.1%</td>
-                    <td>48.5%</td>
-                    <td>36.0%</td>
-                    <td>36.5%</td>
-                    <td>44.9%</td>
-                </tr>
-
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2107.03438">LanguageRefer</a></td>
-                    <td>43.9%</td>
-                    <td>51.0%</td>
-                    <td>36.6%</td>
-                    <td>41.7%</td>
-                    <td>45.0%</td>
-                </tr>
-                    
-                <tr>
-                    <td class="text-left"><a href="https://eslambakr.github.io/LAR.github.io/">LAR</a></td>
-                    <td>48.9%</td>
-                    <td>56.1%</td>
-                    <td>41.8%</td>
-                    <td>46.7%</td>
-                    <td>50.2%</td>
-                </tr>
-
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2105.11450">SAT</a></td>
-                    <td>49.2%</td>
-                    <td>56.3%</td>
-                    <td>42.4%</td>
-                    <td>46.9%</td>
-                    <td>50.4%</td>
-                </tr>
-                
-                <tr>
-                    <td class="text-left"><a href="https://openaccess.thecvf.com/content/ICCV2021/html/Zhao_3DVG-Transformer_Relation_Modeling_for_Visual_Grounding_on_Point_Clouds_ICCV_2021_paper.html">3DVG-Transformer</a></td>
-                    <td>40.8%</td>
-                    <td>48.5%</td>
-                    <td>34.8%</td>
-                    <td>34.8%</td>
-                    <td>43.7%</td>
-                </tr>
-                    
-                    
-                <tr>
-                    <td class="text-left"><a href="https://openaccess.thecvf.com/content/WACV2022/html/Abdelreheem_3DRefTransformer_Fine-Grained_Object_Identification_in_Real-World_Scenes_Using_Natural_Language_WACV_2022_paper.html">3DRefTransformer</a></td>
-                    <td>39.0%</td>
-                    <td>46.4%</td>
-                    <td>32.0%</td>
-                    <td>34.7%</td>
-                    <td>41.2%</td>
-                </tr>
-
-
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2112.08879">BUTD-DETR</a></td>
-                    <td>54.6%</td>
-                    <td>60.7%</td>
-                    <td>48.4%</td>
-                    <td>46.0%</td>
-                    <td><b>58.0%</b></td>
-                </tr>
-                    
-                    
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2204.02174">MVT</a></td>
-                    <td><b>55.1%</b></td>
-                    <td><b>61.3%</b></td>
-                    <td><b>49.1%</b></td>
-                    <td><b>54.3%</b></td>
-                    <td>55.4%</td>
-                </tr>
-                
+                    <td>XX%</td>
+                </tr>                
                 </tbody>
             </table>
         </div>
@@ -356,16 +259,16 @@
                 <b>Stellar-T Challenge</b>
             </h2>
             <hr>
-            <img src="img/benchmark_stellar_t_teaser.png" class="img-fluid center-block"  style=" width: 80%; height: auto;"/>
+            <!-- <img src="img/benchmark_stellar_t_teaser.png" class="img-fluid center-block"  style=" width: 80%; height: auto;"/> -->
             <table id="stellar_t_table" class="table table-bordered" style="width:100%">
                 <thead>
                 <tr>
                     <th class="sr3d">Paper</th>
-                    <th class="sr3d">Overall</th>
-                    <th class="sr3d">Easy</th>
-                    <th class="sr3d">Hard</th>
-                    <th class="sr3d">View-Dependent</th>
-                    <th class="sr3d">View-Independent</th>
+                    <th class="sr3d">IPS</th>
+                    <th class="sr3d">APS</th>
+                    <th class="sr3d">SIS</th>
+                    <th class="sr3d">GOA</th>
+                    <th class="sr3d">RFS</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -377,108 +280,15 @@
                     <td>XX%</td>
                     <td>XX%</td>
                 </tr>
-                
                 <tr>
-                    <td class="text-left"><a href="https://www.aaai.org/AAAI21Papers/AAAI-4433.HuangP.pdf">Text-Guided-GNNs</a>
+                    <td class="text-left"><a href="https://www.aaai.org/AAAI21Papers/AAAI-4433.HuangP.pdf">ELITE</a>
                     </td>
-                    <td>45.0%</td>
-                    <td>48.5%</td>
-                    <td>36.9%</td>
-                    <td>45.8%</td>
-                    <td>45.0%</td>
+                    <td>XX%</td>
+                    <td>XX%</td>
+                    <td>XX%</td>
+                    <td>XX%</td>
+                    <td>XX%</td>
                 </tr>
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2103.01128">InstanceRefer</a></td>
-                    <td>48.0%</td>
-                    <td>51.1%</td>
-                    <td>40.5%</td>
-                    <td>45.4%</td>
-                    <td>48.1%</td>
-                </tr>
-
-                  <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2108.02388">TransRefer3D</a></td>
-                    <td>57.4%</td>
-                    <td>60.5%</td>
-                    <td>50.2%</td>
-                    <td>49.9%</td>
-                    <td>57.7%</td>
-                </tr>
-
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2107.03438">LanguageRefer</a></td>
-                    <td>56.0%</td>
-                    <td>58.9%</td>
-                    <td>49.3%</td>
-                    <td>49.2%</td>
-                    <td>56.3%</td>
-                </tr>
-
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2105.11450">SAT</a></td>
-                    <td>57.9%</td>
-                    <td>61.2%</td>
-                    <td>50.0%</td>
-                    <td>49.2%</td>
-                    <td>58.3%</td>
-                </tr>
-                    
-                <tr>
-                    <td class="text-left"><a href="https://eslambakr.github.io/LAR.github.io/">LAR</a></td>
-                    <td>59.4%</td>
-                    <td>63.0%</td>
-                    <td>51.2%</td>
-                    <td>50.0%</td>
-                    <td>59.1%</td>
-                </tr>
-                    
-                <tr>
-                    <td class="text-left"><a href="https://openaccess.thecvf.com/content/ICCV2021/html/Zhao_3DVG-Transformer_Relation_Modeling_for_Visual_Grounding_on_Point_Clouds_ICCV_2021_paper.html">3DVG-Transformer</a></td>
-                    <td>51.4%</td>
-                    <td>54.2%</td>
-                    <td>44.9%</td>
-                    <td>44.6%</td>
-                    <td>51.7%</td>
-                </tr>
-                    
-                <tr>
-                    <td class="text-left"><a href="https://openaccess.thecvf.com/content/WACV2022/html/Abdelreheem_3DRefTransformer_Fine-Grained_Object_Identification_in_Real-World_Scenes_Using_Natural_Language_WACV_2022_paper.html">3DRefTransformer</a></td>
-                    <td>47.0%</td>
-                    <td>50.7%</td>
-                    <td>38.3%</td>
-                    <td>44.3%</td>
-                    <td>47.1%</td>
-                </tr>
-                    
-
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2112.08879">BUTD-DETR</a></td>
-                    <td><b>67.0%</b></td>
-                    <td><b>68.6%</b></td>
-                    <td><b>63.2%</b></td>
-                    <td>53.0%</td>
-                    <td><b>67.6%</b></td>
-                </tr>
-
-                  <tr>
-                    <td class="text-left"><a href="https://arxiv.org/abs/2204.02174">MVT</a></td>
-                    <td>64.5%</td>
-                    <td>66.9%</td>
-                    <td>58.8%</td>
-                    <td>58.4%</td>
-                    <td>64.7%</td>
-                </tr>
-
-
-                <tr>
-                    <td class="text-left"><a href="https://arxiv.org/pdf/2303.13483.pdf">NS3D</a></td>
-                    <td>62.7%</td>
-                    <td>64.0%</td>
-                    <td>59.6%</td>
-                    <td><b>62.0%</b></td>
-                    <td>62.7%</td>
-                </tr>
-
                 </tbody>
             </table>
         </div>
@@ -495,18 +305,18 @@
         </div>
     </div>
 
-
+<!-- 
     <div class="row" style="padding-bottom:30px">
             <div class="col-md-10 col-md-offset-1">
                 <h4>
                     <b>Acknowledgements</b>
                 </h4>
-                
+                 -->
                 <!-- <p> -->
-                    The template for building this webpage was borrowed from <a href="https://referit3d.github.io/benchmarks.html">ReferIt3D</a>.
+                    <!-- The template for building this webpage was borrowed from <a href="https://referit3d.github.io/benchmarks.html">ReferIt3D</a>. -->
                 <!-- </p> -->
-            </div>
-        </div>
+            <!-- </div>
+        </div> -->
 
 
 
