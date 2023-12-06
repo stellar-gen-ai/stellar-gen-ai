@@ -61,7 +61,7 @@
                 <span class="author-block"
                   ><a href="https://steelperlot.com/"
                     target="_blank"
-                    >Steel Perlot LLC</a
+                    >Steel Perlot Management LLC</a
                   ></span
                 >
               </div>
@@ -186,7 +186,7 @@
             <div class="content has-text-justified">
               <p>
                 In this work, we systematically study the problem of
-                <b>personalized text-to-image</b> generation, where the output
+                <b>personalized</b> <i>text-to-image</i> generation, where the output
                 image is expected to portray information about specific human
                 subjects. E.g., generating images of oneself appearing at
                 imaginative places, interacting with various items, or engaging
@@ -195,13 +195,13 @@
                 generation process along with text describing the desired visual
                 context. Our first contribution is to fill the literature gap by
                 curating high-quality, appropriate data for this task. Namely,
-                we introduce a <i>standardized</i> dataset (Stellar) that
+                we introduce a <b>standardized dataset</b> (Stellar) that
                 contains personalized prompts coupled with images of individuals
                 that is an order of magnitude larger than existing relevant
                 datasets and where rich semantic ground-truth annotations are
                 readily available. Having established Stellar to promote
                 cross-systems fine-grained comparisons further, we introduce a
-                rigorous ensemble of specialized <i>metrics</i> that highlight
+                rigorous ensemble of <b>specialized metrics</b> that highlight
                 and disentangle fundamental properties such systems should obey.
                 Besides being intuitive, our new metrics correlate more strongly
                 with human judgment than currently used (generic) text-to-image
@@ -211,13 +211,48 @@
                 <a href="https://stability.ai/stable-diffusion" target="_blank">SDXL</a>, we
                 derive a highly efficient text2image model (<i>StellarNet</i>)
                 that does not require test-time finetuning for each subject and,
-                more importantly, sets quantitatively and in human trials a new
-                SoTA surpassing established works by a very wide margin.
+                more importantly, sets quantitatively and in human trials a <b>new
+                SoTA</b> surpassing established works by a very wide margin.
               </p>
             </div>
           </div>
         </div>
         <!--/ Abstract. -->
+
+        <!-- Main Contributions. -->
+  
+      <div class="container is-max-desktop">      
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3" id="main_contributions">Salient Contributions (<font color="red">WIP. To be beautified</font>)</h2>          
+          <div class="content has-text-justified">
+          
+          <ol>
+            <li><p>This work is a first study focusing <b>explicitly and only</b> on personalized T2I generators concerning <b>human subjects</b>.</p></li>
+
+            <li><p>It introduces <b>new specialized metrics</b> that correlate much stronger with human judgement compared to existing ones; and offers richly annotated data to help <b>standardize</b> this novel setup.</p></li>
+            
+            <li><p>It develops a straightforward, yet efficient personalized generator, <b>StellarNet</b> which sets a new SoTA, and of which the outputs are preferred by human evaluators overwhelmingly more frequently than alternatives.
+              Todo: we need to sell the 78% vs. others statistic.
+            </p></li>
+          </ol>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+
+
+    <!-- <div class="content has-text-centered">
+      <img
+        src="static/images/STELLAR_horizontal.jpg"
+        style="padding-bottom: 10px"
+        class="img-responsive"
+        alt="overview"
+      />
+    </div> -->
+
+
 
         <!-- Paper video. -->
         <!-- <div class="columns is-centered has-text-centered">
@@ -806,13 +841,13 @@
                         <td>APS</td>
                         <td>0.013</td>
                         <td>0.018</td>
-                        <td>0.389</td>
+                        <td><u>0.389</u></td>
                       </tr>
                       <tr>
                         <td>SIS</td>
                         <td>0.112</td>
                         <td>0.011</td>
-                        <td>0.435</td>
+                        <td><u>0.435</u></td>
                       </tr>
                       <tr>
                         <td>IPS</td>
