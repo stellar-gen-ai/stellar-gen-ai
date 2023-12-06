@@ -93,7 +93,7 @@
                   <!-- Code Link. -->
                   <span class="link-block">
                     <a
-                      href="https://github.com/stellar-gen-ai/"
+                      href="https://github.com/stellar-gen-ai/stellar-metrics"
                       target="_blank"
                       class="external-link button is-normal is-rounded is-dark"
                     >
@@ -106,7 +106,7 @@
                   <!-- Dataset Link. -->
                   <span class="link-block">
                     <a
-                      href="todo"
+                      href="#stellar_dataset"
                       class="external-link button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
@@ -238,7 +238,7 @@
         <!-- Dataset. -->
         <div class="columns is-centered">
           <div class="column is-full-width">
-            <h2 class="title is-3">Stellar Dataset</h2>
+            <h2 class="title is-3" id="stellar_dataset">Stellar Dataset</h2>
             <div class="content has-text-justified">
               <p>
                 Stellar (<i
@@ -250,32 +250,19 @@
                 describing imaginative situations and actions for rendering
                 human-centric fictional images, paired with rich
                 meta-annotations promoting a rigorous evaluation of personalized
-                T2I systems. Moreover, we associate the above prompts with
-                <b>400</b> <i>unique</i> human identities from the publicly
-                available images of the
-                <a
-                  href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html"
-                  target="_blank"
-                  >CelebAMask-HQ Dataset</a
-                >. A subset of these images is also shown in this webpage (all
-                original images blah blah).
-              </p>
-              <p>
-                <b>DISCLAIMER:</b> We do not have any copyright ownership for
-                the images and we do not redistribute them.
+                T2I systems.
               </p>
             </div>
             <!-- Overview. -->
             <h3 class="title is-4">Prompts Dataset Overview</h3>
             <div class="content has-text-justified">
               <p>
-                The prompts are a combination of human-generated ones (sourced
+                The prompts are a combination of human-generated ones (crowdsourced
                 from Amazon Mechanical Turk), denoted as Stellar-<math
                   ><mi mathvariant="script">H</mi></math>
-                >
                 and template-based semi-automatically generated prompts, denoted
-                as Stellar-<math><mi mathvariant="script">T</mi></math>
-                >. A small subset of these prompts, together with a
+                as Stellar-<math><mi mathvariant="script">T</mi></math>.
+                A small subset of these prompts, together with a
                 corresponding generation template and associated categories
                 (show with a colored circle, e.g.,
                 <span
@@ -601,22 +588,46 @@
               </table>
 
               <div class="content has-text-justified">
+                <h4 class="title is-5">Download</h4>
                 <p>
-                  To <b>download</b> the Stellar's prompt dataset (<i>20k</i>
-                  annotations) please fill out
+                  To download the Stellar's prompt dataset (<i>20k</i>
+                  annotations) please first fill out
                   <a
                     href="https://forms.gle/kmZJjmyXVMH9Fyep6"
                     target="_blank"
                     >this form</a
                   >
-                  accepting its Terms of Use. You can additionally use
+                  accepting its <a href="https://github.com/stellar-gen-ai/stellar-dataset/blob/main/LICENSE"
+                  target="_blank"
+                  >Terms of Use</a>. You can additionally use
                   <a
                     href="https://github.com/stellar-gen-ai/stellar-dataset"
                     target="_blank"
                     >this repository</a
                   >
-                  to prepare the Stellar dataset after downloading all the
-                  required components.
+                  to setup the Stellar dataset in a format that could ease the
+                  replication of the experiments described in our published
+                  manuscript. (This is also necessary for the <a
+                  href="./benchmarks.html"
+                  target="_blank">benchmarking</a> of your method).
+                </p>
+                <p>
+                  Please note, that for our benchmark and experiments we associate
+                  Stellar's prompts with <b>400</b> unique human identities
+                  corresponding to publicly available images of the
+                  <a
+                    href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html"
+                    target="_blank"
+                    >CelebAMask-HQ Dataset</a
+                  >. A subset of such images (denoted as <i>original image</i>) is shown
+                  in this webpage.
+                </p>
+                <p>
+                  <b>DISCLAIMER:</b> We do not have any copyright ownership for
+                  the images of <a
+                  href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html"
+                  target="_blank"
+                  >CelebAMask-HQ</a> and we do not redistribute them.
                 </p>
               </div>
             </div>
