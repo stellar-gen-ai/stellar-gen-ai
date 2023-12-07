@@ -122,7 +122,7 @@
                       class="external-link button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
-                        <i class="far fa-images"></i>
+                        <i class="fas fa-trophy"></i>
                       </span>
                       <span>Benchmark</span>
                     </a>
@@ -220,12 +220,28 @@
             <h3 class="title is-4">Main Contributions</h3>
             <div class="content has-text-justified">
               <ol>
-                <li><p>This work is among the first studying <b>explicitly and only</b> personalized T2I generators concerning <b>human subjects</b>.</p></li>
-    
-                <li><p>It introduces <b>new specialized metrics</b> that correlate much stronger with human judgement compared to existing ones; and offers richly annotated data to help <b>standardize</b> this setup.</p></li>
-                
-                <li><p>It develops a straightforward, yet efficient personalized generator, <b>StellarNet</b> which sets a new SoTA, and of which the outputs are preferred by human evaluators overwhelmingly more frequently than alternatives (<b>9 times more</b> often than the <a href="https://arxiv.org/abs/2302.13848">next best</a> method).
-                </p></li>
+                <li>
+                  <p>
+                    This work is among the first studying <b>explicitly and only</b>
+                    personalized T2I generators concerning <b>human subjects</b>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    It introduces <b>new specialized metrics</b> that correlate much
+                    stronger with human judgement compared to existing ones; and offers
+                    richly annotated data to help <b>standardize</b> this setup.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    It develops a straightforward, yet efficient personalized generator,
+                    <b>StellarNet</b> which sets a new SoTA, and of which the outputs are
+                    preferred by human evaluators overwhelmingly more frequently than
+                    alternatives (<b>9 times more</b> often than the
+                    <a href="https://arxiv.org/abs/2302.13848" target="_blank">next best</a> method).
+                  </p>
+                </li>
               </ol>
             </div>
           </div>
@@ -663,14 +679,13 @@
         <div class="columns is-centered">
           <div class="column is-full-width">
             <h2 class="title is-3">Metrics</h2>
-
             <!-- Overview. -->
             <h3 class="title is-4">Overview</h3>
             <div class="content has-text-justified">
               <p>
                 We introduce three novel metrics to measure the similarity
                 between the input subject's `identity', and the generated output
-                image; (i) an overall similarity metric assessing general
+                image; (i) a coarse face-similarity metric assessing general
                 identity preservation (<tt>IPS</tt>) (ii) a fine-grained metric
                 focused on facial attribute preservation (<tt>APS</tt>), and
                 (iii) a metric orthogonal to the first two, designed to evaluate
@@ -679,7 +694,8 @@
               </p>
               <p>
                 Established metrics assessing text-image similarity (e.g.,
-                CLIP<sub>T</sub>) often fall short in providing granular
+                <a href="https://arxiv.org/abs/2103.00020" target="_blank">CLIP<sub>T</sub></a>)
+                often fall short in providing granular
                 insights into their scoring rationale; i.e., given a low
                 similarity, it is impossible to reason whether this stems from a
                 failure to depict the semantic objects, the requested
@@ -830,13 +846,13 @@
                         <td>APS</td>
                         <td>0.013</td>
                         <td>0.018</td>
-                        <td><u>0.389</u></td>
+                        <td>0.389</td>
                       </tr>
                       <tr>
                         <td>SIS</td>
                         <td>0.112</td>
                         <td>0.011</td>
-                        <td><u>0.435</u></td>
+                        <td>0.435</td>
                       </tr>
                       <tr>
                         <td>IPS</td>
@@ -870,19 +886,22 @@
               <p>
                 We utilize a Dynamic Textual Inversion (<tt>DTI</tt>) module
                 that uses a binary subject mask to invert the input identity image
-                into textual embeddings, S<sup>*</sup>, that are used to condition
+                into textual embeddings, <b>S<sup>*</sup></b>, that are used to condition
                 the text-to-image backbone (<b style="color: #ae96b4">left</b>).
-                This S<sup>*</sup> is used as part of the textual prompt passed
+                This <b>S<sup>*</sup></b> is used as part of the textual prompt passed
                 to the pre-trained text-to-image model to generate images of the
                 given identity (<b style="color: #d8b14f">middle</b>). Additionally,
                 we use LoRA weight offsets for the UNet backbone of SDXL to better
-                express the new S<sup>*</sup> embedding and generate the desired
+                express the new <b>S<sup>*</sup></b> embedding and generate the desired
                 personality (<b style="color: #be544e">middle bottom</b>). To
                 avoid unnecessary penalization of the model, we use the
                 MSE loss only over the masked outputs, and we additionally
-                regularize the S<sup>*</sup> embeddings to avoid learning
+                regularize the <b>S<sup>*</sup></b> embeddings to avoid learning
                 high-frequency information (<b style="color: #6c8eb5">right</b
-                >). During training, we only update the weights of the
+                >). During training, we use the training set of <a
+                href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html"
+                target="_blank"
+                >CelebAMask-HQ</a> and we only update the weights of the
                 Image2Text projections and the LoRA weights.
               </p>
             </div>
@@ -901,8 +920,23 @@
               <p>
                 Using the results from our <i>Overall</i> Human Preference
                 Study, we find StellarNet's generations to be preferred, against three
-                previous methods, in <b>78.1%</b> of all trials, with the second best
-                method having an 8.7% preference from humans.
+                previous methods (ELITE<sup>*</sup>, Dreambooth, Textual Inversion),
+                in <b>78.1%</b> of all trials, with the second best method
+                (ELITE<sup>*</sup>) having an 8.7% preference from humans. Additionally,
+                we evaluate all 4 methods on our introduced metrics, as well as
+                <a href="https://arxiv.org/abs/2103.00020" target="_blank">CLIP<sub>T</sub></a>,
+                <a href="https://arxiv.org/abs/2303.14420" target="_blank">HPSv1</a>,
+                <a href="https://arxiv.org/abs/2306.09341" target="_blank">HPSv2</a>,
+                <a href="https://arxiv.org/abs/2305.01569" target="_blank">PickScore</a>,
+                <a href="https://arxiv.org/abs/2306.09344" target="_blank">DreamSim</a>,
+                <a href="https://arxiv.org/abs/2304.05977" target="_blank">ImageReward</a>,
+                <a href="https://arxiv.org/abs/2103.00020" target="_blank">CLIP<sub>I</sub></a>
+                and <a href="https://github.com/christophschuhmann/improved-aesthetic-predictor"
+                target="_blank">Aesthetic Score</a>
+                and we find a significant agreement, with all metrics
+                (except from CLIP<sub>T</sub>) prefering our method's outputs.
+              </p>
+              <p>
                 Qualitatively, on the image below we show same examples of
                 StellarNet's generations compared other personalized T2I
                 methods. Coupled with every image there are 5 colored circles
@@ -911,7 +945,13 @@
                   class="colored-circle"
                   style="background-color: #ac7ebc"
                 ></span>, means this image has the highest score for this metric
-                compared to the other images in the row.
+                compared to the other images in the row. Note also how the last image
+                underlines the significans and <b>complementarity</b> of <tt>APS</tt> and
+                <tt>IPS</tt> metrics. Where <tt>IPS</tt> coarse face similarity does not
+                accurately discern StellarNet's improved capture of the input
+                subject's identity due to changes in non-invariant characteristics like glasses,
+                the fine-grained nature of <tt>APS</tt> manages to effectively showcase our method's
+                enhanced ability to represent this identity.
               </p>
             </div>
             <div class="content has-text-centered">
