@@ -1,73 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="Stellar Dataset"
-      content="stellar dataset, generative ai, StellarNet."
-    />
-    <meta name="keywords" content="Stellar, T2I" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Stellar</title>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="Stellar Dataset" content="stellar dataset, generative ai, StellarNet." />
+  <meta name="keywords" content="Stellar, T2I" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stellar</title>
 
-    <link rel="stylesheet" href="./static/css/bulma.min.css" />
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-    />
-    <link rel="stylesheet" href="./static/css/index.css" />
-    <link rel="icon" href="./static/images/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" href="./static/css/bulma.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css" />
+  <link rel="icon" href="./static/images/favicon.svg" />
 
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
 
-    <script type="text/javascript">
-      var methods, asc1 = -1,
-          asc2 = 1,
-          asc3 = 1;
-      asc4 = 1;
-      asc5 = 1;
-      window.onload = function () {
-          methods = document.getElementById("methods");
-          sort_table(methods, 1, asc1)
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+
+  <script type="text/javascript">
+    var methods, asc1 = -1,
+      asc2 = 1,
+      asc3 = 1;
+    asc4 = 1;
+    asc5 = 1;
+    window.onload = function () {
+      methods = document.getElementById("methods");
+      sort_table(methods, 1, asc1)
+    }
+
+    function sort_table(tbody, col, asc) {
+      var rows = tbody.rows,
+        rlen = rows.length,
+        arr = new Array(),
+        i, j, cells, clen;
+      // fill the array with values from the table
+      for (i = 0; i < rlen; i++) {
+        cells = rows[i].cells;
+        clen = cells.length;
+        arr[i] = new Array();
+        for (j = 0; j < clen; j++) {
+          arr[i][j] = cells[j].innerHTML;
+        }
       }
-
-      function sort_table(tbody, col, asc) {
-          var rows = tbody.rows,
-              rlen = rows.length,
-              arr = new Array(),
-              i, j, cells, clen;
-          // fill the array with values from the table
-          for (i = 0; i < rlen; i++) {
-              cells = rows[i].cells;
-              clen = cells.length;
-              arr[i] = new Array();
-              for (j = 0; j < clen; j++) {
-                  arr[i][j] = cells[j].innerHTML;
-              }
-          }
-          // sort the array by the specified column number (col) and order (asc)
-          arr.sort(function (a, b) {
-              return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : -1 * asc);
-          });
-          // replace existing rows with new rows created from the sorted array
-          for (i = 0; i < rlen; i++) {
-              rows[i].innerHTML = "<td>" + arr[i].join("</td><td>") + "</td>";
-          }
+      // sort the array by the specified column number (col) and order (asc)
+      arr.sort(function (a, b) {
+        return (a[col] == b[col]) ? 0 : ((a[col] > b[col]) ? asc : -1 * asc);
+      });
+      // replace existing rows with new rows created from the sorted array
+      for (i = 0; i < rlen; i++) {
+        rows[i].innerHTML = "<td>" + arr[i].join("</td><td>") + "</td>";
       }
     </script>
   </head>
@@ -96,120 +87,172 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <!-- Intro. -->
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Intro</h2>
-            <div class="content has-text-justified">
-              <p>
-                TODO UPDATE PER OUR STUFF and mostly explain the metrics.
-              </p>
-            </div>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Intro. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Intro</h2>
+          <div class="content has-text-justified">
+            <p>
+
+              With the Stellar benchmarks, we wish to track and report the ongoing progress in the emerging field of personalized human-centric generation. To this end, we investigate how well a personalization method works on our <a href="">purposed metrics</a>. A personalization method accepts as input an image of a human subject ( <i>S*</i> ) and a text description (a prompt) to place them in some imaginary context.
+              <br><br>
+              The evaluation happens on three dimensions:
+            <ul>
+              <li><b>Personalization</b>: We evaluate how well a personalized human-centric method accurately portrays the human subject ( <i>S*</i> ) in the requested prompt. For example, does the human subject in the generated image resemble the original input image?
+              </li>
+              <li><b>Objects</b>: We evaluate how well a personalization method can correctly portray the requested objects in a scene. For example, when a personalization method accepts as prompt</br></br>
+                <blockquote>S* watering a palm tree at a snowy day</blockquote>
+                is the expected "object" (<i>snow</i>) present in the generated output rather than ignored subject to the personalization constraint.
+              </li>
+              <li><b>Object Relations</b>: We evaluated how well the relationship between objects and human subjects is portrayed. For example, for a method that is prompted to place an object in a scene and the human subject has to interact with the object, such as
+                </br>
+                </br>
+                <blockquote>S* playing basketball</blockquote>
+                </br>
+                In such cases, we would want to evaluate whether S* is interacting with the object, "basketball".
+              </li>
+            </ul>
+            In summary, we evaluate how well a personalization method performs across the three dimensions. For example, <b>Personalization</b> is evaluated by Identity Preservation Score (IPS), Attribute Preservation Score (APS), Stability Identity Score (SIS). <b>Objects</b> is evaluated by Grounding Objects Accuracy (GOA). Lastly, <b>Object Relations</b> is evaluated by Relation Fidelity Score (RFS).
+            </p>
           </div>
         </div>
-        <!--/ Intro. -->
+      </div>
+      <!--/ Intro. -->
 
-        <!-- Rules. -->
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Rules</h2>
-            <!-- TODO. -->
-            <h3 class="title is-4">TODO</h3>
-            <div class="content has-text-justified">
-              <p>
-                TODO.
-              </p>
-            </div>
-            <!--/ TODO. -->
+      <!-- Rules. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Rules</h2>
+          <!-- TODO. -->
+          <h3 class="title is-4">TODO</h3>
+          <div class="content has-text-justified">
+            <p>
+              TODO.
+            </p>
           </div>
+          <!--/ TODO. -->
         </div>
-        <!--/ Rules. -->
+      </div>
+      <!--/ Rules. -->
 
-        <!-- Leaderboard. -->
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">Leaderboard</h2>
+      <!-- Leaderboard. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Leaderboard</h2>
 
-            <!-- Stellar-T Challenge. -->
-            <h3 class="title is-4">Stellar-<math><mi mathvariant="script">T</mi></math> Challenge</h3>
-            <div class="content has-text-justified">
-              <table id="stellar_t_table">
-                <thead>
+          <!-- Stellar-T Challenge. -->
+          <h3 class="title is-4">Stellar-<math>
+              <mi mathvariant="script">T</mi>
+            </math> Challenge</h3>
+          <div class="content has-text-justified">
+            <table id="stellar_t_table">
+              <thead>
                 <tr>
                   <th>Paper</th>
-                  <th>IPS</th><th>APS</th><th>SIS</th><th>GOA</th><th>RFS</th>
+                  <th>IPS</th>
+                  <th>APS</th>
+                  <th>SIS</th>
+                  <th>GOA</th>
+                  <th>RFS</th>
                 </tr>
-                </thead>
-                <tbody>
+              </thead>
+              <tbody>
                 <tr>
                   <td><a href="TODO">StellarNet</a></td>
-                  <td>0.637</td><td>0.693</td><td>0.577</td><td>0.305</td><td>0.134</td>
+                  <td>0.637</td>
+                  <td>0.693</td>
+                  <td>0.577</td>
+                  <td>0.305</td>
+                  <td>0.134</td>
                 </tr>
                 <tr>
                   <td><a href="https://arxiv.org/abs/2302.13848" target="_blank">ELITE<sup>*</sup></a></td>
-                  <td>0.383</td><td>0.490</td><td>0.355</td><td>0.260</td><td>0.106</td>
+                  <td>0.383</td>
+                  <td>0.490</td>
+                  <td>0.355</td>
+                  <td>0.260</td>
+                  <td>0.106</td>
                 </tr>
                 <tr>
                   <td><a href="https://arxiv.org/abs/2208.12242" target="_blank">Dreambooth</a></td>
-                  <td>0.252</td><td>0.317</td><td>0.232</td><td>0.302</td><td>0.103</td>
+                  <td>0.252</td>
+                  <td>0.317</td>
+                  <td>0.232</td>
+                  <td>0.302</td>
+                  <td>0.103</td>
                 </tr>
                 <tr>
                   <td><a href="https://arxiv.org/abs/2208.01618" target="_blank">Textual Inversion</a></td>
-                  <td>0.287</td><td>0.510</td><td>0.262</td><td>0.229</td><td>0.082</td>
+                  <td>0.287</td>
+                  <td>0.510</td>
+                  <td>0.262</td>
+                  <td>0.229</td>
+                  <td>0.082</td>
                 </tr>
-                </tbody>
-              </table>
-            </div>
-            <!--/ Stellar-T Challenge. -->
-            <!-- Stellar-H Challenge. -->
-            <h3 class="title is-4">Stellar-<math><mi mathvariant="script">H</mi></math> Challenge</h3>
-            <div class="content has-text-justified">
-              <table id="stellar_h_table">
-                <thead>
-                  <tr>
-                    <th>Paper</th>
-                    <th>IPS</th><th>APS</th><th>SIS</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td><a href="TODO">StellarNet</a></td>
-                    <td>0.622</td><td>0.685</td><td>0.564</td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://arxiv.org/abs/2302.13848" target="_blank">ELITE<sup>*</sup></a></td>
-                    <td>0.368</td><td>0.449</td><td>0.342</td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://arxiv.org/abs/2208.12242" target="_blank">Dreambooth</a></td>
-                    <td>0.246</td><td>0.299</td><td>0.228</td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://arxiv.org/abs/2208.01618" target="_blank">Textual Inversion</a></td>
-                    <td>0.299</td><td>0.419</td><td>0.273</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <!--/ Stellar-H Challenge. -->
-            <!-- Notes. -->
-            <h3 class="title is-4">Notes</h3>
-            <div class="content has-text-justified">
-              <ul>
-                <li>ELITE<sup>*</sup> is trained on the training set of <a
-                  href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html"
-                  target="_blank"
-                  >CelebAMask-HQ Dataset</a
-                > using the code in the <a href="https://github.com/csyxwei/ELITE" target="_blank">original repo</a>.</li>
-              </ul>
-            </div>
-            <!--/ Notes. -->
+              </tbody>
+            </table>
           </div>
+          <!--/ Stellar-T Challenge. -->
+          <!-- Stellar-H Challenge. -->
+          <h3 class="title is-4">Stellar-<math>
+              <mi mathvariant="script">H</mi>
+            </math> Challenge</h3>
+          <div class="content has-text-justified">
+            <table id="stellar_h_table">
+              <thead>
+                <tr>
+                  <th>Paper</th>
+                  <th>IPS</th>
+                  <th>APS</th>
+                  <th>SIS</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td><a href="TODO">StellarNet</a></td>
+                  <td>0.622</td>
+                  <td>0.685</td>
+                  <td>0.564</td>
+                </tr>
+                <tr>
+                  <td><a href="https://arxiv.org/abs/2302.13848" target="_blank">ELITE<sup>*</sup></a></td>
+                  <td>0.368</td>
+                  <td>0.449</td>
+                  <td>0.342</td>
+                </tr>
+                <tr>
+                  <td><a href="https://arxiv.org/abs/2208.12242" target="_blank">Dreambooth</a></td>
+                  <td>0.246</td>
+                  <td>0.299</td>
+                  <td>0.228</td>
+                </tr>
+                <tr>
+                  <td><a href="https://arxiv.org/abs/2208.01618" target="_blank">Textual Inversion</a></td>
+                  <td>0.299</td>
+                  <td>0.419</td>
+                  <td>0.273</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--/ Stellar-H Challenge. -->
+          <!-- Notes. -->
+          <h3 class="title is-4">Notes</h3>
+          <div class="content has-text-justified">
+            <ul>
+              <li>ELITE<sup>*</sup> is trained on the training set of <a
+                  href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html" target="_blank">CelebAMask-HQ
+                  Dataset</a> using the code in the <a href="https://github.com/csyxwei/ELITE" target="_blank">original
+                  repo</a>.</li>
+            </ul>
+          </div>
+          <!--/ Notes. -->
         </div>
         <!--/ Leaderboard. -->
       </section>
@@ -229,68 +272,68 @@
             </div>
           </div>
         </div>
-        <!--/ Report Results. -->
       </div>
-    </section>
+      <!--/ Report Results. -->
+    </div>
+  </section>
 
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <p>
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <p>
         If you find our work useful in your research, please consider citing:
-        </p>
-        <pre><code>@article{stellar2023,
+      </p>
+      <pre><code>@article{stellar2023,
   author    = {Achlioptas, Panos and Benetatos, Alexandros and Fostiropoulos, Iordanis and Skourtis, Dimitris},
   title     = {Stellar: Systematic Evaluation of Human-Centric Personalized Text-to-Image Methods},
   volume    = {abs/put-once-we-get-arxiv-id},
   journal   = {CORR},
   year      = {2023},
 }</code></pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-8">
-            <div class="content">
-              <p>
-                This website is based on the <a href="https://github.com/nerfies/nerfies.github.io"
-                  target="_blank"
-                  >Nerfies website template</a
-                >, which is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en"
-                target="_blank"
-                >Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-              </p>
-            </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is based on the <a href="https://github.com/nerfies/nerfies.github.io"
+                target="_blank">Nerfies website template</a>, which is licensed under a <a
+                href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank">Creative Commons
+                Attribution-ShareAlike 4.0 International License</a>.
+            </p>
           </div>
         </div>
       </div>
-    </footer>
-  </body>
-  <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-  <!-- <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script> -->
-  <script>
-      $(document).ready(function () {
-          $('#stellar_h_table').DataTable({
-              columnDefs: [ // disable sorting of the first column
-                  {orderable: false, targets: 0}
-              ],
-              "order": [[1, "desc"]], // Default Ordering on the overall column
-              searching: false, // Disable search bar
-              paging: false, // Stop pagination for now
-              info: false // hide "Showing 1 to M of N entries" line
-          });
-  
-          $('#stellar_t_table').DataTable({
-              columnDefs: [ // disable sorting of the first column
-                  {orderable: false, targets: 0}
-              ],
-              "order": [[1, "desc"]], // Default Ordering on the overall column
-              searching: false, // Disable search bar
-              paging: false, // Stop pagination for now
-              info: false // hide "Showing 1 to M of N entries" line
-          });
-      })
-  </script>  
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<!-- <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script> -->
+<script>
+  $(document).ready(function () {
+    $('#stellar_h_table').DataTable({
+      columnDefs: [ // disable sorting of the first column
+        { orderable: false, targets: 0 }
+      ],
+      "order": [[1, "desc"]], // Default Ordering on the overall column
+      searching: false, // Disable search bar
+      paging: false, // Stop pagination for now
+      info: false // hide "Showing 1 to M of N entries" line
+    });
+
+    $('#stellar_t_table').DataTable({
+      columnDefs: [ // disable sorting of the first column
+        { orderable: false, targets: 0 }
+      ],
+      "order": [[1, "desc"]], // Default Ordering on the overall column
+      searching: false, // Disable search bar
+      paging: false, // Stop pagination for now
+      info: false // hide "Showing 1 to M of N entries" line
+    });
+  })
+</script>
+
 </html>
