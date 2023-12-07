@@ -70,10 +70,20 @@
           }
       }
     </script>
-
   </head>
+
   <body>
-    <section class="hero">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-start" style="display: flex!important; flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="index.html">
+          <span class="icon" style="padding-right: 20px;">
+            <i class="fas fa-home"></i>
+          </span> Home
+        </a>
+      </div>
+    </nav>
+
+    <section class="hero" style="margin-bottom: -3em;">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
@@ -202,8 +212,10 @@
           </div>
         </div>
         <!--/ Leaderboard. -->
+      </section>
 
-        <!-- Report Results. -->
+      <!-- Report Results. -->
+      <section class="section" id="ReportResults">
         <div class="columns is-centered">
           <div class="column is-full-width">
             <h2 class="title is-3">Reporting New Results</h2>
