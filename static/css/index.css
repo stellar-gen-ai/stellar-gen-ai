@@ -170,3 +170,20 @@ td.left_middle {
 a {
   color: var(--links)
 }
+
+th:first-child, td:first-child {
+  border-right: 2px solid #dbdbdb!important;
+}
+
+#stellar_t_table th {
+  background-color: #CCA7A2;
+}
+#stellar_t_table a{
+  color: #A86961!important;
+}
+#stellar_h_table th {
+  background-color: #D9BBF9;
+}
+#stellar_t_table a{
+  color: #AB69F2important;
+}
