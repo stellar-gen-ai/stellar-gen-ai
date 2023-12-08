@@ -171,7 +171,7 @@ a {
   color: var(--links)
 }
 
-th:first-child, td:first-child {
+#stellar_t_table th:first-child, #stellar_t_table td:first-child, #stellar_h_table th:first-child, #stellar_h_table td:first-child{
   border-right: 2px solid #dbdbdb!important;
 }
 
@@ -191,4 +191,8 @@ th:first-child, td:first-child {
 
 .navbar-item:hover {
   color: var(--links)!important;
+}
+
+#clustrmaps {
+  width: 20%;
 }

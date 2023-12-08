@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta
-      name="Stellar Dataset"
-      content="stellar dataset, generative ai, StellarNet."
+      name="Stellar"
+      content="stellar dataset, generative ai, StellarNet, text2image"
     />
     <meta name="keywords" content="Stellar, T2I" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,13 +24,12 @@
       href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
     />
     <link rel="stylesheet" href="./static/css/index.css" />
-    <link rel="icon" href="./static/images/favicon.svg" />
+    <link rel="icon" href="./static/images/favicon.png" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
   </head>
   <body>
     <section class="hero">
@@ -93,14 +92,13 @@
                   <!-- Code Link. -->
                   <span class="link-block">
                     <a
-                      href="https://github.com/stellar-gen-ai/stellar-metrics"
-                      target="_blank"
+                      href=""
                       class="external-link button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
-                      <span>Code</span>
+                      <span>Code <b>(Coming Soon)</b></span>
                     </a>
                   </span>
                   <!-- Dataset Link. -->
@@ -209,10 +207,10 @@
                 from the recent works of
                 <a href="https://arxiv.org/abs/2302.13848" target="_blank">ELITE</a> and
                 <a href="https://stability.ai/stable-diffusion" target="_blank">SDXL</a>, we
-                derive a highly efficient text2image model (<i>StellarNet</i>)
+                derive a highly efficient personalized text2image model (<i>StellarNet</i>)
                 that does not require test-time finetuning for each subject and,
                 more importantly, sets quantitatively and in human trials a <b>new
-                SoTA</b> surpassing established works by a very wide margin.
+                SoTA</b> surpassing established works by a wide margin.
               </p>
             </div>
             <!--/ Abstract. -->
@@ -222,13 +220,13 @@
               <ol>
                 <li>
                   <p>
-                    This work is among the first studying <b>explicitly and only</b>
+                    This work studies <b>explicitly and only</b>
                     personalized T2I generators concerning <b>human subjects</b>.
                   </p>
                 </li>
                 <li>
                   <p>
-                    It introduces <b>new specialized metrics</b> that correlate much
+                    It introduces <b>new specialized metrics</b> that correlate
                     stronger with human judgement compared to existing ones; and offers
                     richly annotated data to help <b>standardize</b> this setup.
                   </p>
@@ -237,7 +235,7 @@
                   <p>
                     It develops a straightforward, yet efficient personalized generator,
                     <b>StellarNet</b> which sets a new SoTA, and of which the outputs are
-                    preferred by human evaluators overwhelmingly more frequently than
+                    preferred by human evaluators more frequently than
                     alternatives (<b>9 times more</b> often than the
                     <a href="https://arxiv.org/abs/2302.13848" target="_blank">next best</a> method).
                   </p>
@@ -639,12 +637,7 @@
                   >
                   accepting our <a href="https://github.com/stellar-gen-ai/stellar-dataset/blob/main/LICENSE"
                   target="_blank"
-                  >Terms of Use</a>. You can additionally use
-                  <a
-                    href="https://github.com/stellar-gen-ai/stellar-dataset"
-                    target="_blank"
-                    >this repository</a
-                  >
+                  >Terms of Use</a>. You can additionally use this repository <b>(Coming Soon)</b>
                   to setup the Stellar prompts dataset in a format that could ease the
                   replication of the experiments described in our published
                   manuscript. (This is also necessary for <a
@@ -879,30 +872,26 @@
         <div class="columns is-centered">
           <div class="column is-full-width">
             <h2 class="title is-3">StellarNet</h2>
-
             <!-- Overview. -->
-            <h3 class="title is-4">Architecture Overview</h3>
+            <h3 class="title is-4">How does StellarNet work?</h3>
             <div class="content has-text-justified">
               <p>
-                We utilize a Dynamic Textual Inversion (<tt>DTI</tt>) module
-                that uses a binary subject mask to invert the input identity image
-                into textual embeddings, <b>S<sup>*</sup></b>, that are used to condition
-                the text-to-image backbone (<b style="color: #ae96b4">left</b>).
-                This <b>S<sup>*</sup></b> is used as part of the textual prompt passed
-                to the pre-trained text-to-image model to generate images of the
-                given identity (<b style="color: #d8b14f">middle</b>). Additionally,
-                we use LoRA weight offsets for the UNet backbone of SDXL to better
-                express the new <b>S<sup>*</sup></b> embedding and generate the desired
-                personality (<b style="color: #be544e">middle bottom</b>). To
-                avoid unnecessary penalization of the model, we use the
-                MSE loss only over the masked outputs, and we additionally
-                regularize the <b>S<sup>*</sup></b> embeddings to avoid learning
-                high-frequency information (<b style="color: #6c8eb5">right</b
-                >). During training, we use the training set of <a
-                href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html"
-                target="_blank"
-                >CelebAMask-HQ</a> and we only update the weights of the
-                Image2Text projections and the LoRA weights.
+                Given a prompt and an input image for a subject, we start by
+                utilizing a Dynamic Textual Inversion (<tt>DTI</tt>) module
+                to invert the input identity image into textual embeddings,
+                <b>S<sup>*</sup></b>, which are then combined with the given prompt
+                (<b style="color: #ae96b4">left</b>). This augmented prompt is passed
+                to the text-to-image backbone (SDXL) to generate images of the given identity
+                (<b style="color: #d8b14f">middle</b>). Additionally, we refine this process
+                by training efficient Low Rank Adaptation (LoRA) weight offsets for the UNet
+                backbone of SDXL. This way, the network learns to better express the introduced
+                <b>S<sup>*</sup></b> embeddings, allowing us to better generate the desired personality
+                (<b style="color: #be544e">middle bottom</b>).
+                To avoid unnecessary computations and penalization of the model, we use
+                a binary mask. This mask serves a dual purpose: focusing the <tt>DTI</tt> on the input
+                subject and restricting the calculation of the Mean Squared Error (MSE) loss to the
+                masked inputs and outputs. It's essential to note that during inference, we do
+                not perform any per-subject optimization.
               </p>
             </div>
             <div class="content has-text-centered">
@@ -945,13 +934,7 @@
                   class="colored-circle"
                   style="background-color: #ac7ebc"
                 ></span>, means this image has the highest score for this metric
-                compared to the other images in the row. Note also how the last image
-                underlines the significans and <b>complementarity</b> of <tt>APS</tt> and
-                <tt>IPS</tt> metrics. Where <tt>IPS</tt> coarse face similarity does not
-                accurately discern StellarNet's improved capture of the input
-                subject's identity due to changes in non-invariant characteristics like glasses,
-                the fine-grained nature of <tt>APS</tt> manages to effectively showcase our method's
-                enhanced ability to represent this identity.
+                compared to the other images in the row.
               </p>
             </div>
             <div class="content has-text-centered">
@@ -961,6 +944,17 @@
                 class="img-responsive"
                 alt="overview"
               />
+            </div>
+            <div class="content has-text-justified">
+              <p>
+                Note also how the last row on the image underlines the significans and
+                <b>complementarity</b> of <tt>APS</tt> and <tt>IPS</tt> metrics.
+                Where <tt>IPS</tt> coarse face similarity does not
+                accurately discern StellarNet's improved capture of the input
+                subject's identity due to changes in non-invariant characteristics like glasses,
+                the fine-grained nature of <tt>APS</tt> manages to effectively showcase our method's
+                enhanced ability to represent this identity.
+              </p>
             </div>
             <!--/ Comparisons. -->
           </div>
@@ -1024,7 +1018,7 @@
   author    = {Achlioptas, Panos and Benetatos, Alexandros and Fostiropoulos, Iordanis and Skourtis, Dimitris},
   title     = {Stellar: Systematic Evaluation of Human-Centric Personalized Text-to-Image Methods},
   volume    = {abs/put-once-we-get-arxiv-id},
-  journal   = {CORR},
+  journal   = {Computing Research Repository (CoRR)},
   year      = {2023},
 }</code></pre>
       </div>
@@ -1034,12 +1028,15 @@
       <div class="container is-max-desktop content">
         <h2 class="title">Acknowledgements</h2>
         <p>
-          The authors wish to express their gratitude to the wonderful Turkers of Amazon Mechanical
+          The authors wish to express their gratitude to <a href=“https://steelperlot.com/team/michelle-ritter”>Michelle Ritter</a>
+          for supporting and enabling the fruition of this project and <a href=“https://www.linkedin.com/in/ipapapa/”>Ioannis Papapanagiotou</a>,
+          Stephanie Bousley, Ran Rabinowitch, and John Boyd for their essential help in managing various administrative and
+          logistical aspects throughout its development. Furthermore, they wish to thank the fantastic Turkers of Amazon Mechanical
           Turk, whose help in curating the introduced dataset was pivotal.
         </p>
-<!--         <p>
+        <p>
           <b style="color: var(--links)"><sup>*</sup></b> All authors made very significant and distinct contributions.
-        </p> -->
+        </p>
       </div>
     </section>
 
@@ -1057,9 +1054,10 @@
                 >Creative Commons Attribution-ShareAlike 4.0 International License</a>.
               </p>
             </div>
-          </div>
+            <!-- <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=3tryepdzbnT4VzUHmU42uX7iAGfvlmRwFRbh7D-OE48&ct=ffffff&co=2d78ad&cmo=3acc3a&cmn=ff5353"></script> -->
+          </div>          
         </div>
-      </div>
-    </footer>
+      </div>      
+    </footer>    
   </body>
 </html>
