@@ -192,3 +192,7 @@ a {
 .navbar-item:hover {
   color: var(--links)!important;
 }
+
+#clustrmaps {
+  width: 20%;
+}
