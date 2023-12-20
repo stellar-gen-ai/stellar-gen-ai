@@ -1,97 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="Stellar"
-      content="stellar dataset, generative ai, StellarNet, text2image"
-    />
-    <meta name="keywords" content="Stellar, T2I" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Stellar</title>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="Stellar" content="stellar dataset, generative ai, StellarNet, text2image" />
+  <meta name="keywords" content="Stellar, T2I" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stellar</title>
 
-    <link rel="stylesheet" href="./static/css/bulma.min.css" />
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-    />
-    <link rel="stylesheet" href="./static/css/index.css" />
-    <link rel="icon" href="./static/images/favicon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-  </head>
+  <link rel="stylesheet" href="./static/css/bulma.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css" />
+  <link rel="icon" href="./static/images/favicon.png" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZVHQBQ0BK"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+</head>
 
-    gtag('config', 'G-2ZVHQBQ0BK');
-  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZVHQBQ0BK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-  <body>
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered">
+  gtag('config', 'G-2ZVHQBQ0BK');
+</script>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              Stellar: Systematic Evaluation of<br />Human-Centric
+              Personalized<br />Text-to-Image Methods
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="">Panos Achlioptas<sup>*</sup></a>,</span>
+              <span class="author-block">
+                <a href="">Alexandros Benetatos<sup>*</sup></a>,</span>
+              <span class="author-block">
+                <a href="">Iordanis Fostiropoulos<sup>*</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="">Dimitris Skourtis<sup>*</sup></a>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://steelperlot.com/" target="_blank">Steel Perlot Management
+                  LLC</a></span>
+            </div>
+
             <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">
-                Stellar: Systematic Evaluation of<br />Human-Centric
-                Personalized<br />Text-to-Image Methods
-              </h1>
-              <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="">Panos Achlioptas<sup>*</sup></a>,</span
-                >
-                <span class="author-block">
-                  <a href="">Alexandros Benetatos<sup>*</sup></a>,</span
-                >
-                <span class="author-block">
-                  <a href="">Iordanis Fostiropoulos<sup>*</sup></a>,
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2312.06116" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
                 </span>
-                <span class="author-block">
-                  <a href="">Dimitris Skourtis<sup>*</sup></a>,
-                </span>
-              </div>
-
-              <div class="is-size-5 publication-authors">
-                <span class="author-block"
-                  ><a href="https://steelperlot.com/"
-                    target="_blank"
-                    >Steel Perlot Management LLC</a
-                  ></span
-                >
-              </div>
-
-              <div class="column has-text-centered">
-                <div class="publication-links">
-                  <!-- PDF Link. -->
-                  <span class="link-block">
-                    <a
-                      href="https://arxiv.org/abs/2312.06116"
-                      target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                      </span>
-                      <span>arXiv</span>
-                    </a>
-                  </span>
-                  <!-- Video Link. TODO
+                <!-- Video Link. TODO
               <span class="link-block">
                 <a href="todo"
                    class="external-link button is-normal is-rounded is-dark">
@@ -101,63 +84,52 @@
                   <span>Video</span>
                 </a>
               </span> -->
-                  <!-- Code Link. -->
-                  <span class="link-block">
-                    <a
-                      href="https://github.com/stellar-gen-ai/stellar-metrics"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Code </span>
-                    </a>
-                  </span>
-                  <!-- Dataset Link. -->
-                  <span class="link-block">
-                    <a
-                      href="#stellar_dataset"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="far fa-images"></i>
-                      </span>
-                      <span>Data</span>
-                    </a>
-                  </span>
-                  <!-- Benchmark Link. -->
-                  <span class="link-block">
-                    <a
-                      href="./benchmarks.html"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="fas fa-trophy"></i>
-                      </span>
-                      <span>Benchmark</span>
-                    </a>
-                  </span>
-                  <!-- Supplementary Link. -->
-                  <span class="link-block">
-                    <a
-                      href="materials/stellar_supplementary.pdf"
-                      target="_blank"
-                      class="external-link button is-normal is-rounded is-dark"
-                    >
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-                </div>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/stellar-gen-ai/stellar-metrics"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code </span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="#stellar_dataset" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+                <!-- Benchmark Link. -->
+                <span class="link-block">
+                  <a href="./benchmarks.html" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-trophy"></i>
+                    </span>
+                    <span>Benchmark</span>
+                  </a>
+                </span>
+                <!-- Supplementary Link. -->
+                <span class="link-block">
+                  <a href="materials/stellar_supplementary.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- 
+    </div>
+  </section>
+  <!-- 
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -174,90 +146,86 @@
   </div>
 </section> -->
 
-    <section class="hero is-light is-small">
-      <div class="hero-body">
-        <div class="container">
-          <img
-            src="static/images/stellar_seed_ablation_rotated_f5f5f5.jpg"
-            style="padding-bottom: 10px"
-            class="img-responsive"
-            alt="overview"
-          />
-        </div>
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <img src="static/images/stellar_seed_ablation_rotated_f5f5f5.jpg" style="padding-bottom: 10px"
+          class="img-responsive" alt="overview" />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <!-- Abstract. -->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                In this work, we systematically study the problem of
-                <b>personalized</b> <i>text-to-image</i> generation, where the output
-                image is expected to portray information about specific human
-                subjects. E.g., generating images of oneself appearing at
-                imaginative places, interacting with various items, or engaging
-                in fictional activities. To this end, we focus on text-to-image
-                systems that input a single image of an individual to ground the
-                generation process along with text describing the desired visual
-                context. Our first contribution is to fill the literature gap by
-                curating high-quality, appropriate data for this task. Namely,
-                we introduce a <b>standardized dataset</b> (Stellar) that
-                contains personalized prompts coupled with images of individuals
-                that is an order of magnitude larger than existing relevant
-                datasets and where rich semantic ground-truth annotations are
-                readily available. Having established Stellar to promote
-                cross-systems fine-grained comparisons further, we introduce a
-                rigorous ensemble of <b>specialized metrics</b> that highlight
-                and disentangle fundamental properties such systems should obey.
-                Besides being intuitive, our new metrics correlate significantly more strongly
-                with human judgment than currently used metrics on this task.
-                Last but not least, drawing inspiration
-                from the recent works of
-                <a href="https://arxiv.org/abs/2302.13848" target="_blank">ELITE</a> and
-                <a href="https://stability.ai/stable-diffusion" target="_blank">SDXL</a>, we
-                derive a simple yet efficient, personalized text-to-image baseline that does
-                not require test-time fine-tuning for each subject and which sets quantitatively
-                and in human trials a <b>new SoTA</b>. 
-              </p>
-            </div>
-            <!--/ Abstract. -->
-            <!-- Main Contributions. -->
-            <h3 class="title is-4">Main Contributions</h3>
-            <div class="content has-text-justified">
-              <ol>
-                <li>
-                  <p>
-                    This work studies explicitly and only
-                    <b>personalized</b> T2I generators concerning <b>human subjects</b>.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    It introduces <b>new specialized metrics</b> that correlate
-                    stronger with human judgement compared to existing ones; and offers
-                    richly annotated data to help <b>standardize</b> this setup.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    It develops a simple, yet efficient personalized generator baseline,
-                    <b>StellarNet</b>, which sets a new SoTA, and of which the outputs are
-                    preferred by human evaluators more frequently than
-                    alternatives (<b>9 times more</b> often than the
-                    <a href="https://arxiv.org/abs/2302.13848" target="_blank">next best</a> method).
-                  </p>
-                </li>
-              </ol>
-            </div>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In this work, we systematically study the problem of
+              <b>personalized</b> <i>text-to-image</i> generation, where the output
+              image is expected to portray information about specific human
+              subjects. E.g., generating images of oneself appearing at
+              imaginative places, interacting with various items, or engaging
+              in fictional activities. To this end, we focus on text-to-image
+              systems that input a single image of an individual to ground the
+              generation process along with text describing the desired visual
+              context. Our first contribution is to fill the literature gap by
+              curating high-quality, appropriate data for this task. Namely,
+              we introduce a <b>standardized dataset</b> (Stellar) that
+              contains personalized prompts coupled with images of individuals
+              that is an order of magnitude larger than existing relevant
+              datasets and where rich semantic ground-truth annotations are
+              readily available. Having established Stellar to promote
+              cross-systems fine-grained comparisons further, we introduce a
+              rigorous ensemble of <b>specialized metrics</b> that highlight
+              and disentangle fundamental properties such systems should obey.
+              Besides being intuitive, our new metrics correlate significantly more strongly
+              with human judgment than currently used metrics on this task.
+              Last but not least, drawing inspiration
+              from the recent works of
+              <a href="https://arxiv.org/abs/2302.13848" target="_blank">ELITE</a> and
+              <a href="https://stability.ai/stable-diffusion" target="_blank">SDXL</a>, we
+              derive a simple yet efficient, personalized text-to-image baseline that does
+              not require test-time fine-tuning for each subject and which sets quantitatively
+              and in human trials a <b>new SoTA</b>.
+            </p>
+          </div>
+          <!--/ Abstract. -->
+          <!-- Main Contributions. -->
+          <h3 class="title is-4">Main Contributions</h3>
+          <div class="content has-text-justified">
+            <ol>
+              <li>
+                <p>
+                  This work studies explicitly and only
+                  <b>personalized</b> T2I generators concerning <b>human subjects</b>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  It introduces <b>new specialized metrics</b> that correlate
+                  stronger with human judgement compared to existing ones; and offers
+                  richly annotated data to help <b>standardize</b> this setup.
+                </p>
+              </li>
+              <li>
+                <p>
+                  It develops a simple, yet efficient personalized generator baseline,
+                  <b>StellarNet</b>, which sets a new SoTA, and of which the outputs are
+                  preferred by human evaluators more frequently than
+                  alternatives (<b>9 times more</b> often than the
+                  <a href="https://arxiv.org/abs/2302.13848" target="_blank">next best</a> method).
+                </p>
+              </li>
+            </ol>
           </div>
         </div>
-        <!--/ Main Contributions. -->
+      </div>
+      <!--/ Main Contributions. -->
 
-    <!-- <div class="content has-text-centered">
+      <!-- <div class="content has-text-centered">
       <img
         src="static/images/STELLAR_horizontal.jpg"
         style="padding-bottom: 10px"
@@ -268,8 +236,8 @@
 
 
 
-        <!-- Paper video. -->
-        <!-- <div class="columns is-centered has-text-centered">
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -278,726 +246,577 @@
         </div>
       </div>
     </div> -->
-        <!--/ Paper video. -->
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3" id="metrics">Code</h2>
+          <!-- Code. -->
+          <div class="content has-text-justified">
+            <p>
+            <ul>
+              <li>We proposed 5 metrics for evaluating human-centric personalization Text-2-Image models. <a
+                  href="https://github.com/stellar-gen-ai/stellar-metrics">The following repository</a> provides the
+                implementation of our metrics and 8 additional baseline metrics for Text-2-Image and Image-2-Image
+                methods.
+              </li>
+              <li>We introduced the STELLAR dataset for evaluating human-centric personalization
+                Text-2-Image models. <a href="https://github.com/stellar-gen-ai/stellar-metrics">The following
+                  repository</a> containts information on how to download and setup the STELLAR dataset.</li>
+            </ul>
+
+            </p>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <!-- Dataset. -->
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3" id="stellar_dataset">Stellar Dataset</h2>
+      <!-- Dataset. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3" id="stellar_dataset">Stellar Dataset</h2>
+          <div class="content has-text-justified">
+            <p>
+              Stellar (<i><u>S</u>ystema<u>t</u>ic <u>E</u>va<u>l</u>uation of
+                Persona<u>l</u>ized Im<u>a</u>ge<u>r</u>y</i>) dataset is a large-scale standardized evaluation dataset
+              for
+              human-based personalized T2I generation tasks. Stellar is
+              comprised of <b><i>20k</i></b> carefully curated prompts
+              describing imaginative situations and actions for rendering
+              human-centric fictional images, paired with rich
+              meta-annotations promoting a rigorous evaluation of personalized
+              T2I systems.
+            </p>
+          </div>
+          <!-- Overview. -->
+          <h3 class="title is-4">Prompts Dataset Overview</h3>
+          <div class="content has-text-justified">
+            <p>
+              The prompts are a combination of human-generated ones (crowdsourced
+              from Amazon Mechanical Turk), denoted as Stellar-<math>
+                <mi mathvariant="script">H</mi>
+              </math>
+              and template-based semi-automatically generated prompts, denoted
+              as Stellar-<math>
+                <mi mathvariant="script">T</mi>
+              </math>.
+              A small subset of these prompts, together with a
+              corresponding generation template and associated categories
+              (show with a colored circle, e.g.,
+              <span class="colored-circle" style="background-color: var(--nature)"></span>) can be seen in the table
+              below.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <table style="width: 100%" id="stellar-prompts-table">
+              <colgroup>
+                <col style="width: 142pt" />
+                <col style="width: 132pt" />
+                <col style="width: 140pt" />
+                <col style="width: 33pt" />
+              </colgroup>
+              <thead style="background-color: #f0f0f0">
+                <tr>
+                  <th style="text-align: left">
+                    <strong>Stellar-<math>
+                        <mi mathvariant="script">H</mi>
+                      </math></strong>
+                  </th>
+                  <th style="text-align: left">
+                    <strong>Stellar-<math>
+                        <mi mathvariant="script">T</mi>
+                      </math></strong>
+                  </th>
+                  <th style="text-align: left"><strong>Template</strong></th>
+                  <th style="text-align: left"><strong>Category</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="left_middle">juggling oranges on a rooftop</td>
+                  <td class="left_middle">
+                    juggling
+                    <span class="underlined" style="text-decoration-color: var(--fruit)">apples</span>
+                    in the
+                    <span class="underlined" style="text-decoration-color: var(--building)">airport</span>
+                  </td>
+                  <td class="left_middle">
+                    juggling
+                    <span style="background-color: var(--fruit); color: black">[fruit]</span>
+                    <span style="background-color: var(--building); color: black">[building loc.]</span>
+                  </td>
+                  <td class="left_middle">
+                    <span class="colored-circle" style="background-color: var(--fruit)"></span><span
+                      class="colored-circle" style="background-color: var(--building)"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="left_middle">
+                    riding a skateboard in outer-space
+                  </td>
+                  <td class="left_middle">
+                    riding a
+                    <span class="underlined" style="text-decoration-color: var(--vehicle)">skateboard</span>
+                    near
+                    <span class="underlined" style="text-decoration-color: var(--space_loc)">Saturn</span>
+                  </td>
+                  <td class="left_middle">
+                    riding
+                    <span style="background-color: var(--vehicle); color: black">[vehicle]</span>
+                    in the
+                    <span style="background-color: var(--space_loc); color: black">[space loc.]</span>
+                  </td>
+                  <td class="left_middle">
+                    <span class="colored-circle" style="background-color: var(--vehicle)"></span><span
+                      class="colored-circle" style="background-color: var(--space_loc)"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="left_middle">
+                    wrestling an octopus on a pirate boat
+                  </td>
+                  <td class="left_middle">
+                    fighting a
+                    <span class="underlined" style="text-decoration-color: var(--animal)">shark</span>
+                    on a
+                    <span class="underlined" style="text-decoration-color: var(--vehicle)">boat</span>
+                  </td>
+                  <td class="left_middle">
+                    fighting
+                    <span style="background-color: var(--animal); color: black">[animal]</span>
+                    in the
+                    <span style="background-color: var(--vehicle); color: black">[vehicle]</span>
+                  </td>
+                  <td class="left_middle">
+                    <span class="colored-circle" style="background-color: var(--animal)"></span><span
+                      class="colored-circle" style="background-color: var(--vehicle)"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="left_middle">
+                    as an astronaut walking to a rocket
+                  </td>
+                  <td class="left_middle">
+                    as an
+                    <span class="underlined" style="text-decoration-color: var(--uniformed)">astronaut</span>
+                    near a
+                    <span class="underlined" style="text-decoration-color: var(--space_obj)">spaceship</span>
+                  </td>
+                  <td class="left_middle">
+                    as
+                    <span style="background-color: var(--uniformed); color: black">[uniformed]</span>
+                    near
+                    <span style="background-color: var(--space_obj); color: black">[space-object]</span>
+                  </td>
+                  <td class="left_middle">
+                    <span class="colored-circle" style="background-color: var(--uniformed)"></span><span
+                      class="colored-circle" style="background-color: var(--space_obj)"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="left_middle">
+                    playing the trombone in a castle
+                  </td>
+                  <td class="left_middle">
+                    playing the
+                    <span class="underlined" style="text-decoration-color: var(--musical)">saxophone</span>
+                    in a
+                    <span class="underlined" style="text-decoration-color: var(--building)">castle</span>
+                  </td>
+                  <td class="left_middle">
+                    playing
+                    <span style="background-color: var(--musical); color: black">[musical instrument]</span>
+                    <span style="background-color: var(--building); color: black">[building loc.]</span>
+                  </td>
+                  <td class="left_middle">
+                    <span class="colored-circle" style="background-color: var(--musical)"></span><span
+                      class="colored-circle" style="background-color: var(--building)"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="left_middle">
+                    riding an elephant through the jungles of Thailand
+                  </td>
+                  <td class="left_middle">
+                    riding a
+                    <span class="underlined" style="text-decoration-color: var(--animal)">tiger</span>
+                    in the
+                    <span class="underlined" style="text-decoration-color: var(--nature)">jungle</span>
+                  </td>
+                  <td class="left_middle">
+                    riding
+                    <span style="background-color: var(--animal); color: black">[animal]</span>
+                    <span style="background-color: var(--nature); color: black">[nature loc.]</span>
+                  </td>
+                  <td class="left_middle">
+                    <span class="colored-circle" style="background-color: var(--animal)"></span><span
+                      class="colored-circle" style="background-color: var(--nature)"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="left_middle">
+                    eating a croissant at a cafe in Paris
+                  </td>
+                  <td class="left_middle">
+                    eating a
+                    <span class="underlined" style="text-decoration-color: var(--food)">souvlaki</span>
+                    in
+                    <span class="underlined" style="text-decoration-color: var(--city)">Athens</span>
+                  </td>
+                  <td class="left_middle">
+                    eating
+                    <span style="background-color: var(--food); color: black">[food]</span>
+                    <span style="background-color: var(--city); color: black">[city]</span>
+                  </td>
+                  <td class="left_middle">
+                    <span class="colored-circle" style="background-color: var(--food)"></span><span
+                      class="colored-circle" style="background-color: var(--city)"></span>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4"></td>
+                </tr>
+              </tfoot>
+            </table>
+
             <div class="content has-text-justified">
+              <h4 class="title is-5">Download</h4>
               <p>
-                Stellar (<i
-                  ><u>S</u>ystema<u>t</u>ic <u>E</u>va<u>l</u>uation of
-                  Persona<u>l</u>ized Im<u>a</u>ge<u>r</u>y</i
-                >) dataset is a large-scale standardized evaluation dataset for
-                human-based personalized T2I generation tasks. Stellar is
-                comprised of <b><i>20k</i></b> carefully curated prompts
-                describing imaginative situations and actions for rendering
-                human-centric fictional images, paired with rich
-                meta-annotations promoting a rigorous evaluation of personalized
-                T2I systems.
+                To download the Stellar prompts dataset (<i>20k</i>
+                annotations) please first fill out
+                <a href="https://forms.gle/kmZJjmyXVMH9Fyep6" target="_blank">this form</a>
+                accepting our <a href="https://stellar-gen-ai.github.io/materials/stellar_terms_of_use.txt"
+                  target="_blank">Terms of Use</a>. You can additionally use <a
+                  href="https://github.com/stellar-gen-ai/stellar-dataset">this repository</a>
+                to setup the Stellar prompts dataset in a format that could ease the
+                replication of the experiments described in our published
+                manuscript. (This is also necessary for <a href="./benchmarks.html" target="_blank">benchmarking</a>
+                your method).
+              </p>
+              <p>
+                Please note that for our benchmark and experiments we associate the
+                Stellar prompts with <b>400</b> unique human identities
+                corresponding to publicly available images of the
+                <a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html" target="_blank">CelebAMask-HQ
+                  Dataset</a>. A subset of such images (denoted as <i>original image</i>) is shown
+                on this webpage.
+              </p>
+              <p>
+                <b>DISCLAIMER:</b> We do not have any copyright ownership for
+                the images of <a href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html"
+                  target="_blank">CelebAMask-HQ</a> and we do not redistribute them.
               </p>
             </div>
-            <!-- Overview. -->
-            <h3 class="title is-4">Prompts Dataset Overview</h3>
-            <div class="content has-text-justified">
-              <p>
-                The prompts are a combination of human-generated ones (crowdsourced
-                from Amazon Mechanical Turk), denoted as Stellar-<math
-                  ><mi mathvariant="script">H</mi></math>
-                and template-based semi-automatically generated prompts, denoted
-                as Stellar-<math><mi mathvariant="script">T</mi></math>.
-                A small subset of these prompts, together with a
-                corresponding generation template and associated categories
-                (show with a colored circle, e.g.,
-                <span
-                  class="colored-circle"
-                  style="background-color: var(--nature)"
-                ></span
-                >) can be seen in the table below.
-              </p>
-            </div>
-            <div class="content has-text-centered">
-              <table style="width: 100%" id="stellar-prompts-table">
-                <colgroup>
-                  <col style="width: 142pt" />
-                  <col style="width: 132pt" />
-                  <col style="width: 140pt" />
-                  <col style="width: 33pt" />
-                </colgroup>
-                <thead style="background-color: #f0f0f0">
-                  <tr>
-                    <th style="text-align: left">
-                      <strong
-                        >Stellar-<math>
-                          <mi mathvariant="script">H</mi>
-                        </math></strong
-                      >
-                    </th>
-                    <th style="text-align: left">
-                      <strong
-                        >Stellar-<math>
-                          <mi mathvariant="script">T</mi>
-                        </math></strong
-                      >
-                    </th>
-                    <th style="text-align: left"><strong>Template</strong></th>
-                    <th style="text-align: left"><strong>Category</strong></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="left_middle">juggling oranges on a rooftop</td>
-                    <td class="left_middle">
-                      juggling
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--fruit)"
-                        >apples</span
-                      >
-                      in the
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--building)"
-                        >airport</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      juggling
-                      <span style="background-color: var(--fruit); color: black"
-                        >[fruit]</span
-                      >
-                      <span
-                        style="background-color: var(--building); color: black"
-                        >[building loc.]</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      <span
-                        class="colored-circle"
-                        style="background-color: var(--fruit)"
-                      ></span
-                      ><span
-                        class="colored-circle"
-                        style="background-color: var(--building)"
-                      ></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="left_middle">
-                      riding a skateboard in outer-space
-                    </td>
-                    <td class="left_middle">
-                      riding a
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--vehicle)"
-                        >skateboard</span
-                      >
-                      near
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--space_loc)"
-                        >Saturn</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      riding
-                      <span
-                        style="background-color: var(--vehicle); color: black"
-                        >[vehicle]</span
-                      >
-                      in the
-                      <span
-                        style="background-color: var(--space_loc); color: black"
-                        >[space loc.]</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      <span
-                        class="colored-circle"
-                        style="background-color: var(--vehicle)"
-                      ></span
-                      ><span
-                        class="colored-circle"
-                        style="background-color: var(--space_loc)"
-                      ></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="left_middle">
-                      wrestling an octopus on a pirate boat
-                    </td>
-                    <td class="left_middle">
-                      fighting a
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--animal)"
-                        >shark</span
-                      >
-                      on a
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--vehicle)"
-                        >boat</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      fighting
-                      <span
-                        style="background-color: var(--animal); color: black"
-                        >[animal]</span
-                      >
-                      in the
-                      <span
-                        style="background-color: var(--vehicle); color: black"
-                        >[vehicle]</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      <span
-                        class="colored-circle"
-                        style="background-color: var(--animal)"
-                      ></span
-                      ><span
-                        class="colored-circle"
-                        style="background-color: var(--vehicle)"
-                      ></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="left_middle">
-                      as an astronaut walking to a rocket
-                    </td>
-                    <td class="left_middle">
-                      as an
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--uniformed)"
-                        >astronaut</span
-                      >
-                      near a
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--space_obj)"
-                        >spaceship</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      as
-                      <span
-                        style="background-color: var(--uniformed); color: black"
-                        >[uniformed]</span
-                      >
-                      near
-                      <span
-                        style="background-color: var(--space_obj); color: black"
-                        >[space-object]</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      <span
-                        class="colored-circle"
-                        style="background-color: var(--uniformed)"
-                      ></span
-                      ><span
-                        class="colored-circle"
-                        style="background-color: var(--space_obj)"
-                      ></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="left_middle">
-                      playing the trombone in a castle
-                    </td>
-                    <td class="left_middle">
-                      playing the
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--musical)"
-                        >saxophone</span
-                      >
-                      in a
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--building)"
-                        >castle</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      playing
-                      <span
-                        style="background-color: var(--musical); color: black"
-                        >[musical instrument]</span
-                      >
-                      <span
-                        style="background-color: var(--building); color: black"
-                        >[building loc.]</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      <span
-                        class="colored-circle"
-                        style="background-color: var(--musical)"
-                      ></span
-                      ><span
-                        class="colored-circle"
-                        style="background-color: var(--building)"
-                      ></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="left_middle">
-                      riding an elephant through the jungles of Thailand
-                    </td>
-                    <td class="left_middle">
-                      riding a
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--animal)"
-                        >tiger</span
-                      >
-                      in the
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--nature)"
-                        >jungle</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      riding
-                      <span
-                        style="background-color: var(--animal); color: black"
-                        >[animal]</span
-                      >
-                      <span
-                        style="background-color: var(--nature); color: black"
-                        >[nature loc.]</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      <span
-                        class="colored-circle"
-                        style="background-color: var(--animal)"
-                      ></span
-                      ><span
-                        class="colored-circle"
-                        style="background-color: var(--nature)"
-                      ></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="left_middle">
-                      eating a croissant at a cafe in Paris
-                    </td>
-                    <td class="left_middle">
-                      eating a
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--food)"
-                        >souvlaki</span
-                      >
-                      in
-                      <span
-                        class="underlined"
-                        style="text-decoration-color: var(--city)"
-                        >Athens</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      eating
-                      <span style="background-color: var(--food); color: black"
-                        >[food]</span
-                      >
-                      <span style="background-color: var(--city); color: black"
-                        >[city]</span
-                      >
-                    </td>
-                    <td class="left_middle">
-                      <span
-                        class="colored-circle"
-                        style="background-color: var(--food)"
-                      ></span
-                      ><span
-                        class="colored-circle"
-                        style="background-color: var(--city)"
-                      ></span>
-                    </td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td colspan="4"></td>
-                  </tr>
-                </tfoot>
-              </table>
+          </div>
+        </div>
+      </div>
+      <!--/ Dataset. -->
 
+      <!-- Metrics. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3" id="metrics">Metrics</h2>
+          <!-- Overview. -->
+          <h3 class="title is-4">Overview</h3>
+          <div class="content has-text-justified">
+            <p>
+              We introduce three novel metrics to measure the similarity
+              between the input subject's `identity', and the generated output
+              image; (i) a coarse face-similarity metric assessing general
+              identity preservation (<tt>IPS</tt>) (ii) a fine-grained metric
+              focused on facial attribute preservation (<tt>APS</tt>), and
+              (iii) a metric orthogonal to the first two, designed to evaluate
+              the sensitivity and robustness of a method in maintaining
+              identity consistency (<tt>SIS</tt>).
+            </p>
+            <p>
+              Established metrics assessing text-image similarity (e.g.,
+              <a href="https://arxiv.org/abs/2103.00020" target="_blank">CLIP<sub>T</sub></a>)
+              often fall short in providing granular
+              insights into their scoring rationale; i.e., given a low
+              similarity, it is impossible to reason whether this stems from a
+              failure to depict the semantic objects, the requested
+              interactions, the desired atmosphere or style, or combinations
+              of the above. Thus, we introduce specialized and interpretable
+              metrics to evaluate two key aspects of the alignment between
+              image and prompt; object faithfulness (<tt>GOA</tt>) and the
+              fidelity of depicted relationships (<tt>RFS</tt>).
+            </p>
+            <p>A visual explanation of the metrics can be seen below.</p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="static/images/metrics_explanation_easy.jpg" style="padding-bottom: 10px" class="img-responsive"
+              alt="overview" />
+          </div>
+          <!--/ Overview. -->
+
+          <div class="columns is-centered">
+
+            <!-- Human Alignment. -->
+            <div class="column">
+              <h3 class="title is-4">Alignment with Human Judgment</h3>
               <div class="content has-text-justified">
-                <h4 class="title is-5">Download</h4>
                 <p>
-                  To download the Stellar prompts dataset (<i>20k</i>
-                  annotations) please first fill out
-                  <a
-                    href="https://forms.gle/kmZJjmyXVMH9Fyep6"
-                    target="_blank"
-                    >this form</a
-                  >
-                  accepting our <a href="https://stellar-gen-ai.github.io/materials/stellar_terms_of_use.txt"
-                  target="_blank"
-                  >Terms of Use</a>. You can additionally use <a href="https://github.com/stellar-gen-ai/stellar-dataset">this repository</a>
-                  to setup the Stellar prompts dataset in a format that could ease the
-                  replication of the experiments described in our published
-                  manuscript. (This is also necessary for <a
-                  href="./benchmarks.html"
-                  target="_blank">benchmarking</a> your method).
+                  To assess the alignment of ours and pre-existing metrics with human judgment,
+                  we study the correlation on the <i>Overall</i> success of the
+                  personalized T2I generation, <i>Object</i>-related faithfulness
+                  between text and generated image, and <i>Relation</i>-related
+                  faithfulness between text and generated image. To this end, we performed
+                  <a href="https://www.mturk.com/" target="_blank">AMT</a> studies recieving a total
+                  of <i>2.5k</i> responses and concluding that our metrics correlate significantly
+                  better with human-preference on all aspects of evaluation.
                 </p>
-                <p>
-                  Please note that for our benchmark and experiments we associate the
-                  Stellar prompts with <b>400</b> unique human identities
-                  corresponding to publicly available images of the
-                  <a
-                    href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html"
-                    target="_blank"
-                    >CelebAMask-HQ Dataset</a
-                  >. A subset of such images (denoted as <i>original image</i>) is shown
-                  on this webpage.
-                </p>
-                <p>
-                  <b>DISCLAIMER:</b> We do not have any copyright ownership for
-                  the images of <a
-                  href="https://mmlab.ie.cuhk.edu.hk/projects/CelebA/CelebAMask_HQ.html"
-                  target="_blank"
-                  >CelebAMask-HQ</a> and we do not redistribute them.
-                </p>
+                <table>
+                  <thead>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                      <th rowspan="2" style="vertical-align: middle">
+                        Metric
+                      </th>
+                      <th colspan="3" style="text-align: center">
+                        Human Pref. <i>Kendall</i> - τ
+                      </th>
+                    </tr>
+                    <tr>
+                      <th>Obj</th>
+                      <th>Rel</th>
+                      <th>Overall</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>CLIP<sub>T</sub></td>
+                      <td>0.130</td>
+                      <td>0.089</td>
+                      <td>0.106</td>
+                    </tr>
+                    <tr>
+                      <td>HPSv2</td>
+                      <td>0.067</td>
+                      <td>0.004</td>
+                      <td>0.224</td>
+                    </tr>
+                    <tr>
+                      <td>PickScore</td>
+                      <td>0.139</td>
+                      <td>0.110</td>
+                      <td>0.246</td>
+                    </tr>
+                    <tr>
+                      <td>DreamSim</td>
+                      <td>0.031</td>
+                      <td>0.132</td>
+                      <td>0.270</td>
+                    </tr>
+                    <tr>
+                      <td>CLIP<sub>I</sub></td>
+                      <td>0.049</td>
+                      <td>0.011</td>
+                      <td>0.304</td>
+                    </tr>
+                    <tr>
+                      <td>HPSv1</td>
+                      <td>0.094</td>
+                      <td>0.103</td>
+                      <td>0.304</td>
+                    </tr>
+                    <tr>
+                      <td>ImageReward</td>
+                      <td>0.040</td>
+                      <td>0.060</td>
+                      <td>0.320</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid #a8014e">
+                      <td>Aesth.</td>
+                      <td>0.049</td>
+                      <td>0.146</td>
+                      <td>0.359</td>
+                    </tr>
+                    <tr>
+                      <td>GOA</td>
+                      <td><b>0.175</b></td>
+                      <td>0.110</td>
+                      <td>0.149</td>
+                    </tr>
+                    <tr>
+                      <td>RFS</td>
+                      <td>0.121</td>
+                      <td><b>0.163</b></td>
+                      <td>0.167</td>
+                    </tr>
+                    <tr>
+                      <td>APS</td>
+                      <td>0.013</td>
+                      <td>0.018</td>
+                      <td>0.389</td>
+                    </tr>
+                    <tr>
+                      <td>SIS</td>
+                      <td>0.112</td>
+                      <td>0.011</td>
+                      <td>0.435</td>
+                    </tr>
+                    <tr>
+                      <td>IPS</td>
+                      <td>0.094</td>
+                      <td>0.018</td>
+                      <td><b>0.455</b></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="4"></td>
+                    </tr>
+                  </tfoot>
+                </table>
               </div>
             </div>
-          </div>
-        </div>
-        <!--/ Dataset. -->
-
-        <!-- Metrics. -->
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3" id="metrics">Metrics</h2>
-            <!-- Overview. -->
-            <h3 class="title is-4">Overview</h3>
-            <div class="content has-text-justified">
-              <p>
-                We introduce three novel metrics to measure the similarity
-                between the input subject's `identity', and the generated output
-                image; (i) a coarse face-similarity metric assessing general
-                identity preservation (<tt>IPS</tt>) (ii) a fine-grained metric
-                focused on facial attribute preservation (<tt>APS</tt>), and
-                (iii) a metric orthogonal to the first two, designed to evaluate
-                the sensitivity and robustness of a method in maintaining
-                identity consistency (<tt>SIS</tt>).
-              </p>
-              <p>
-                Established metrics assessing text-image similarity (e.g.,
-                <a href="https://arxiv.org/abs/2103.00020" target="_blank">CLIP<sub>T</sub></a>)
-                often fall short in providing granular
-                insights into their scoring rationale; i.e., given a low
-                similarity, it is impossible to reason whether this stems from a
-                failure to depict the semantic objects, the requested
-                interactions, the desired atmosphere or style, or combinations
-                of the above. Thus, we introduce specialized and interpretable
-                metrics to evaluate two key aspects of the alignment between
-                image and prompt; object faithfulness (<tt>GOA</tt>) and the
-                fidelity of depicted relationships (<tt>RFS</tt>).
-              </p>
-              <p>A visual explanation of the metrics can be seen below.</p>
-            </div>
-            <div class="content has-text-centered">
-              <img
-                src="static/images/metrics_explanation_easy.jpg"
-                style="padding-bottom: 10px"
-                class="img-responsive"
-                alt="overview"
-              />
-            </div>
-            <!--/ Overview. -->
-
-            <div class="columns is-centered">
-
-              <!-- Human Alignment. -->
-              <div class="column">
-                <h3 class="title is-4">Alignment with Human Judgment</h3>
-                <div class="content has-text-justified">
-                  <p>
-                    To assess the alignment of ours and pre-existing metrics with human judgment,
-                    we study the correlation on the <i>Overall</i> success of the
-                    personalized T2I generation, <i>Object</i>-related faithfulness
-                    between text and generated image, and <i>Relation</i>-related
-                    faithfulness between text and generated image. To this end, we performed
-                    <a href="https://www.mturk.com/" target="_blank">AMT</a> studies recieving a total
-                    of <i>2.5k</i> responses and concluding that our metrics correlate significantly
-                    better with human-preference on all aspects of evaluation.
-                  </p>
-                  <table>
-                    <thead>
-                      <tr>
-                        <td colspan="4"></td>
-                      </tr>
-                      <tr>
-                        <th rowspan="2" style="vertical-align: middle">
-                          Metric
-                        </th>
-                        <th colspan="3" style="text-align: center">
-                          Human Pref. <i>Kendall</i> - τ
-                        </th>
-                      </tr>
-                      <tr>
-                        <th>Obj</th>
-                        <th>Rel</th>
-                        <th>Overall</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>CLIP<sub>T</sub></td>
-                        <td>0.130</td>
-                        <td>0.089</td>
-                        <td>0.106</td>
-                      </tr>
-                      <tr>
-                        <td>HPSv2</td>
-                        <td>0.067</td>
-                        <td>0.004</td>
-                        <td>0.224</td>
-                      </tr>
-                      <tr>
-                        <td>PickScore</td>
-                        <td>0.139</td>
-                        <td>0.110</td>
-                        <td>0.246</td>
-                      </tr>
-                      <tr>
-                        <td>DreamSim</td>
-                        <td>0.031</td>
-                        <td>0.132</td>
-                        <td>0.270</td>
-                      </tr>
-                      <tr>
-                        <td>CLIP<sub>I</sub></td>
-                        <td>0.049</td>
-                        <td>0.011</td>
-                        <td>0.304</td>
-                      </tr>
-                      <tr>
-                        <td>HPSv1</td>
-                        <td>0.094</td>
-                        <td>0.103</td>
-                        <td>0.304</td>
-                      </tr>
-                      <tr>
-                        <td>ImageReward</td>
-                        <td>0.040</td>
-                        <td>0.060</td>
-                        <td>0.320</td>
-                      </tr>
-                      <tr style="border-bottom: 2px solid #a8014e">
-                        <td>Aesth.</td>
-                        <td>0.049</td>
-                        <td>0.146</td>
-                        <td>0.359</td>
-                      </tr>
-                      <tr>
-                        <td>GOA</td>
-                        <td><b>0.175</b></td>
-                        <td>0.110</td>
-                        <td>0.149</td>
-                      </tr>
-                      <tr>
-                        <td>RFS</td>
-                        <td>0.121</td>
-                        <td><b>0.163</b></td>
-                        <td>0.167</td>
-                      </tr>
-                      <tr>
-                        <td>APS</td>
-                        <td>0.013</td>
-                        <td>0.018</td>
-                        <td>0.389</td>
-                      </tr>
-                      <tr>
-                        <td>SIS</td>
-                        <td>0.112</td>
-                        <td>0.011</td>
-                        <td>0.435</td>
-                      </tr>
-                      <tr>
-                        <td>IPS</td>
-                        <td>0.094</td>
-                        <td>0.018</td>
-                        <td><b>0.455</b></td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <td colspan="4"></td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
+            <!--/ Human Alignment. -->
+            <!-- Correlation. -->
+            <div class="column">
+              <h3 class="title is-4">Correlation with Existing Metrics</h3>
+              <div class="content has-text-justified">
+                <p>
+                  The proposed personalized metrics (<span class="colored-circle"
+                    style="background-color: #b5b3b0"></span>) have a small correlation with Img-to-Img (top) and
+                  Text-to-Img (<span class="colored-circle" style="background-color: #a8014e"></span>) metrics,
+                  suggesting they provide an additional
+                  dimension by which T2I systems can be evaluated. Note also
+                  how the Text-to-Img metrics have high correlation with
+                  <tt>GOA</tt> but very little correlation with
+                  <tt>RFS</tt>, indicating that they mostly assess the faithful
+                  representation of the contextual prompt objects in the image
+                  and not their interactions.
+                </p>
+                <img src="static/images/metrics_correlation_matrix.jpg" style="padding-bottom: 10px"
+                  class="img-responsive" alt="overview" />
               </div>
-              <!--/ Human Alignment. -->
-              <!-- Correlation. -->
-              <div class="column">
-                <h3 class="title is-4">Correlation with Existing Metrics</h3>
-                <div class="content has-text-justified">
-                  <p>
-                    The proposed personalized metrics (<span
-                      class="colored-circle"
-                      style="background-color: #b5b3b0"
-                    ></span
-                    >) have a small correlation with Img-to-Img (top) and
-                    Text-to-Img (<span
-                      class="colored-circle"
-                      style="background-color: #a8014e"
-                    ></span
-                    >) metrics, suggesting they provide an additional
-                    dimension by which T2I systems can be evaluated. Note also
-                    how the Text-to-Img metrics have high correlation with
-                    <tt>GOA</tt> but very little correlation with
-                    <tt>RFS</tt>, indicating that they mostly assess the faithful
-                    representation of the contextual prompt objects in the image
-                    and not their interactions.
-                  </p>
-                  <img
-                    src="static/images/metrics_correlation_matrix.jpg"
-                    style="padding-bottom: 10px"
-                    class="img-responsive"
-                    alt="overview"
-                  />
-                </div>
-              </div>
-              <!--/ Correlation. -->
             </div>
+            <!--/ Correlation. -->
           </div>
         </div>
-        <!--/ Metrics. -->
+      </div>
+      <!--/ Metrics. -->
 
-        <!-- StellarNet. -->
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">StellarNet</h2>
-            <!-- Overview. -->
-            <h3 class="title is-4">How does StellarNet work?</h3>
-            <div class="content has-text-justified">
-              <p>
-                Given a prompt and an input image for a subject, we invert the foreground-masked identity
-                image into textual embeddings, <b>S<sup>*</sup></b>
-                (<b style="color: #ae96b4">left</b>). The <b>S<sup>*</sup></b> augments the textual
-                prompt passed to the pre-trained text-to-image model (SDXL) to guide the model into
-                generating images with the given identity (<b style="color: #d8b14f">middle</b>).
-                Additionally, we finetune the UNet backbone of SDXL using LoRA weight-offsets for efficient
-                and stable training (<b style="color: #be544e">middle bottom</b>). To avoid unnecessary
-                penalization of the model we apply a <i>masked</i> MSE loss during training over the input
-                image <i>and</i> the output generation (<b style="color: #658ebc">right</b>). It is essential
-                to note that during inference, we do not perform any per-subject optimization
-              </p>
-            </div>
-            <div class="content has-text-centered">
-              <img
-                src="static/images/STELLAR_horizontal.jpg"
-                style="padding-bottom: 10px"
-                class="img-responsive"
-                alt="overview"
-              />
-            </div>
-            <div class="content has-text-justified">
-              <p>
-                Our primary objective is <i>not</i> to devise a new personalized T2I <i>paradigm</i> but to
-                meaningfully enrich our comparative assessment pool. Secondarily, we wish to highlight the
-                potential of leveraging more powerful open-source, non-personalized T2I systems
-                (e.g., SDXL) in combination with well-curated data (e.g., CelebAMask-HQ) to assist personalized
-                generators.
-              </p>
-            </div>
-            <!--/ Overview. -->
-            <!-- Comparisons. -->
-            <h3 class="title is-4">Personalized Generators Comparison</h3>
-            <div class="content has-text-justified">
-              <p>
-                Using the results from our <i>Overall</i> Human Preference
-                Study, we find StellarNet's generations to be preferred, against three
-                established personalized generators (ELITE<sup>*</sup>, Dreambooth,
-                Textual Inversion), in <b>78.1%</b> of all trials, compared to 8.7% for the second best method
-                (ELITE<sup>*</sup>). Additionally, we evaluate all 4 methods on our introduced
-                metrics, as well as
-                <a href="https://arxiv.org/abs/2103.00020" target="_blank">CLIP<sub>T</sub></a>,
-                <a href="https://arxiv.org/abs/2303.14420" target="_blank">HPSv1</a>,
-                <a href="https://arxiv.org/abs/2306.09341" target="_blank">HPSv2</a>,
-                <a href="https://arxiv.org/abs/2305.01569" target="_blank">PickScore</a>,
-                <a href="https://arxiv.org/abs/2306.09344" target="_blank">DreamSim</a>,
-                <a href="https://arxiv.org/abs/2304.05977" target="_blank">ImageReward</a>,
-                <a href="https://arxiv.org/abs/2103.00020" target="_blank">CLIP<sub>I</sub></a>
-                and <a href="https://github.com/christophschuhmann/improved-aesthetic-predictor"
-                target="_blank">Aesthetic Score</a>
-                and we find a significant agreement, with all metrics
-                (except from CLIP<sub>T</sub>) prefering our method's outputs.
-              </p>
-              <p>
-                Qualitatively, on the image below we show same examples of
-                StellarNet's generations compared other personalized T2I
-                methods. Coupled with every image there are 5 colored circles
-                representing the preference of the 5 distinct metrics shown on
-                the bottom of the figure. An opaque circle, e.g., <span
-                  class="colored-circle"
-                  style="background-color: #ac7ebc"
-                ></span>, means this image has the highest score for this metric
-                compared to the other images in the row.
-              </p>
-            </div>
-            <div class="content has-text-centered">
-              <img
-                src="static/images/STELLAR_main_fig_full.jpg"
-                style="padding-bottom: 10px"
-                class="img-responsive"
-                alt="overview"
-              />
-            </div>
-            <div class="content has-text-justified">
-              <p>
-                Note also how the last row on the image underlines the significance and
-                <b>complementarity</b> of <tt>APS</tt> and <tt>IPS</tt> metrics.
-                Where <tt>IPS</tt> coarse face similarity does not
-                accurately discern StellarNet's improved capture of the input
-                subject's identity due to changes in non-invariant characteristics like eyeglasses,
-                the fine-grained nature of <tt>APS</tt> manages to effectively showcase our method's
-                enhanced ability to represent this identity.
-              </p>
-            </div>
-            <!--/ Comparisons. -->
+      <!-- StellarNet. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">StellarNet</h2>
+          <!-- Overview. -->
+          <h3 class="title is-4">How does StellarNet work?</h3>
+          <div class="content has-text-justified">
+            <p>
+              Given a prompt and an input image for a subject, we invert the foreground-masked identity
+              image into textual embeddings, <b>S<sup>*</sup></b>
+              (<b style="color: #ae96b4">left</b>). The <b>S<sup>*</sup></b> augments the textual
+              prompt passed to the pre-trained text-to-image model (SDXL) to guide the model into
+              generating images with the given identity (<b style="color: #d8b14f">middle</b>).
+              Additionally, we finetune the UNet backbone of SDXL using LoRA weight-offsets for efficient
+              and stable training (<b style="color: #be544e">middle bottom</b>). To avoid unnecessary
+              penalization of the model we apply a <i>masked</i> MSE loss during training over the input
+              image <i>and</i> the output generation (<b style="color: #658ebc">right</b>). It is essential
+              to note that during inference, we do not perform any per-subject optimization
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="static/images/STELLAR_horizontal.jpg" style="padding-bottom: 10px" class="img-responsive"
+              alt="overview" />
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Our primary objective is <i>not</i> to devise a new personalized T2I <i>paradigm</i> but to
+              meaningfully enrich our comparative assessment pool. Secondarily, we wish to highlight the
+              potential of leveraging more powerful open-source, non-personalized T2I systems
+              (e.g., SDXL) in combination with well-curated data (e.g., CelebAMask-HQ) to assist personalized
+              generators.
+            </p>
+          </div>
+          <!--/ Overview. -->
+          <!-- Comparisons. -->
+          <h3 class="title is-4">Personalized Generators Comparison</h3>
+          <div class="content has-text-justified">
+            <p>
+              Using the results from our <i>Overall</i> Human Preference
+              Study, we find StellarNet's generations to be preferred, against three
+              established personalized generators (ELITE<sup>*</sup>, Dreambooth,
+              Textual Inversion), in <b>78.1%</b> of all trials, compared to 8.7% for the second best method
+              (ELITE<sup>*</sup>). Additionally, we evaluate all 4 methods on our introduced
+              metrics, as well as
+              <a href="https://arxiv.org/abs/2103.00020" target="_blank">CLIP<sub>T</sub></a>,
+              <a href="https://arxiv.org/abs/2303.14420" target="_blank">HPSv1</a>,
+              <a href="https://arxiv.org/abs/2306.09341" target="_blank">HPSv2</a>,
+              <a href="https://arxiv.org/abs/2305.01569" target="_blank">PickScore</a>,
+              <a href="https://arxiv.org/abs/2306.09344" target="_blank">DreamSim</a>,
+              <a href="https://arxiv.org/abs/2304.05977" target="_blank">ImageReward</a>,
+              <a href="https://arxiv.org/abs/2103.00020" target="_blank">CLIP<sub>I</sub></a>
+              and <a href="https://github.com/christophschuhmann/improved-aesthetic-predictor" target="_blank">Aesthetic
+                Score</a>
+              and we find a significant agreement, with all metrics
+              (except from CLIP<sub>T</sub>) prefering our method's outputs.
+            </p>
+            <p>
+              Qualitatively, on the image below we show same examples of
+              StellarNet's generations compared other personalized T2I
+              methods. Coupled with every image there are 5 colored circles
+              representing the preference of the 5 distinct metrics shown on
+              the bottom of the figure. An opaque circle, e.g., <span class="colored-circle"
+                style="background-color: #ac7ebc"></span>, means this image has the highest score for this metric
+              compared to the other images in the row.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="static/images/STELLAR_main_fig_full.jpg" style="padding-bottom: 10px" class="img-responsive"
+              alt="overview" />
+          </div>
+          <div class="content has-text-justified">
+            <p>
+              Note also how the last row on the image underlines the significance and
+              <b>complementarity</b> of <tt>APS</tt> and <tt>IPS</tt> metrics.
+              Where <tt>IPS</tt> coarse face similarity does not
+              accurately discern StellarNet's improved capture of the input
+              subject's identity due to changes in non-invariant characteristics like eyeglasses,
+              the fine-grained nature of <tt>APS</tt> manages to effectively showcase our method's
+              enhanced ability to represent this identity.
+            </p>
+          </div>
+          <!--/ Comparisons. -->
+        </div>
+      </div>
+      <!--/ StellarNet. -->
+
+      <!-- License. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">License</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              The Stellar-prompt dataset is released under the
+              <a href="https://stellar-gen-ai.github.io/materials/stellar_terms_of_use.txt" target="_blank">Stellar
+                Terms of Use</a>. Our evaluation code is released under the following
+              <a href="https://github.com/stellar-gen-ai/stellar-metrics/blob/main/LICENSE" target="_blank">license</a>
+              and the following <a
+                href="https://github.com/stellar-gen-ai/stellar-metrics/blob/main/THIRD-PARTIES-LICENSE"
+                target="_blank">third-party licenses</a>. Our dataset code is released under the following
+              <a href="https://github.com/stellar-gen-ai/stellar-dataset/blob/main/LICENSE" target="_blank">license</a>
+              and the following <a
+                href="https://github.com/stellar-gen-ai/stellar-dataset/blob/main/THIRD-PARTIES-LICENSE"
+                target="_blank">third-party licenses</a>.
+            </p>
           </div>
         </div>
-        <!--/ StellarNet. -->
+      </div>
+      <!--/ License. -->
 
-        <!-- License. -->
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3">License</h2>
-
-            <div class="content has-text-justified">
-              <p>
-                The Stellar-prompt dataset is released under the
-                <a href="https://stellar-gen-ai.github.io/materials/stellar_terms_of_use.txt" target="_blank"
-                  >Stellar Terms of Use</a>. 
-                , our evaluation code is released under the following 
-                <a href="https://github.com/stellar-gen-ai/stellar-metrics/blob/main/LICENSE" target="_blank">license</a> and the following <a href="https://github.com/stellar-gen-ai/stellar-metrics/blob/main/THIRD-PARTIES-LICENSE" target="_blank">third-party licenses</a>, and our dataset code is released under the following 
-                <a href="https://github.com/stellar-gen-ai/stellar-dataset/blob/main/LICENSE" target="_blank">license</a> and the following <a href="https://github.com/stellar-gen-ai/stellar-dataset/blob/main/THIRD-PARTIES-LICENSE" target="_blank">third-party licenses</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!--/ License. -->
-
-        <!-- Concurrent Work. -->
-        <!-- <div class="columns is-centered">
+      <!-- Concurrent Work. -->
+      <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -1021,61 +840,66 @@
         </div>
       </div>
     </div> -->
-        <!--/ Concurrent Work. -->
-      </div>
-    </section>
+      <!--/ Concurrent Work. -->
+    </div>
+  </section>
 
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title">BibTeX</h2>
-        <p>
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <p>
         If you find our work useful in your research, please consider citing:
-        </p>
-        <pre><code>@article{stellar2023,
+      </p>
+      <pre><code>@article{stellar2023,
   author    = {Achlioptas, Panos and Benetatos, Alexandros and Fostiropoulos, Iordanis and Skourtis, Dimitris},
   title     = {Stellar: Systematic Evaluation of Human-Centric Personalized Text-to-Image Methods},
   volume    = {abs/2312.06116},
   journal   = {Computing Research Repository (CoRR)},
   year      = {2023},
 }</code></pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section" id="Acknowledgements">
-      <div class="container is-max-desktop content">
-        <h2 class="title">Acknowledgements</h2>
-        <p>
-          The authors wish to express their gratitude to <a href="https://steelperlot.com/team/michelle-ritter" target="_blank">Michelle Ritter</a>
-          for supporting and enabling the fruition of this project and <a href="https://www.linkedin.com/in/ipapapa/" target="_blank">Ioannis Papapanagiotou</a>,
-          <a href="https://www.linkedin.com/in/stephaniebousley" target="_blank">Stephanie Bousley</a>, Ran Rabinowitch and <a href="https://www.linkedin.com/in/johneboyd/" target="_blank">John Boyd</a> for their essential help in managing various administrative and
-          logistical aspects throughout its development. Furthermore, they wish to thank the fantastic Turkers of Amazon Mechanical
-          Turk, whose help in curating the introduced dataset was pivotal.
-        </p>
-        <p>
-          <b style="color: var(--links)"><sup>*</sup></b> All authors made very significant and distinct contributions.
-        </p>
-      </div>
-    </section>
+  <section class="section" id="Acknowledgements">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgements</h2>
+      <p>
+        The authors wish to express their gratitude to <a href="https://steelperlot.com/team/michelle-ritter"
+          target="_blank">Michelle Ritter</a>
+        for supporting and enabling the fruition of this project and <a href="https://www.linkedin.com/in/ipapapa/"
+          target="_blank">Ioannis Papapanagiotou</a>,
+        <a href="https://www.linkedin.com/in/stephaniebousley" target="_blank">Stephanie Bousley</a>, Ran Rabinowitch
+        and <a href="https://www.linkedin.com/in/johneboyd/" target="_blank">John Boyd</a> for their essential help in
+        managing various administrative and
+        logistical aspects throughout its development. Furthermore, they wish to thank the fantastic Turkers of Amazon
+        Mechanical
+        Turk, whose help in curating the introduced dataset was pivotal.
+      </p>
+      <p>
+        <b style="color: var(--links)"><sup>*</sup></b> All authors made very significant and distinct contributions.
+      </p>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-8">
-            <div class="content">
-              <p>
-                This website is based on the <a href="https://github.com/nerfies/nerfies.github.io"
-                  target="_blank"
-                  >Nerfies website template</a
-                >, which is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/"
-                target="_blank"
-                >Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-              </p>
-            </div>            
-            <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=zHilbFZvaHI34fw8KGaL46qC-FKbueUZNjbqN1mFkSg"></script>
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is based on the <a href="https://github.com/nerfies/nerfies.github.io"
+                target="_blank">Nerfies website template</a>, which is licensed under a <a
+                href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons
+                Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+          <script type="text/javascript" id="clustrmaps"
+            src="//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=zHilbFZvaHI34fw8KGaL46qC-FKbueUZNjbqN1mFkSg"></script>
 
-          </div>          
         </div>
-      </div>      
-    </footer>    
-  </body>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
